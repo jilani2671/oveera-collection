@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Oveera Collections</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec136d",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#221018",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white antialiased transition-colors duration-200">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <header
+            class="sticky top-0 z-50 w-full bg-surface-light dark:bg-surface-dark border-b border-[#f4f0f2] dark:border-gray-800">
+            <input class="peer hidden" id="navbar-toggle" type="checkbox" />
+            <div class="relative z-20 w-full bg-surface-light dark:bg-surface-dark px-6 py-4 lg:px-20">
+                <div class="mx-auto flex max-w-7xl items-center justify-between gap-8">
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="size-8 text-primary">
+                                <span class="material-symbols-outlined text-3xl">local_mall</span>
+                            </div>
+                            <h2 class="text-xl font-bold tracking-tight text-[#181114] dark:text-white">Oveera
+                                Collections
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex max-w-md flex-1">
+                        <label class="relative flex w-full items-center">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 text-[#896172]">
+                                <span class="material-symbols-outlined">search</span>
+                            </div>
+                            <input
+                                class="w-full rounded-lg bg-[#f4f0f2] dark:bg-gray-800 py-2.5 pl-10 pr-4 text-sm text-[#181114] dark:text-white placeholder-[#896172] focus:outline-none focus:ring-2 focus:ring-primary/50 border-none"
+                                placeholder="Search for sarees, lehengas..." type="text" />
+                        </label>
+                    </div>
+                    <nav class="hidden lg:flex items-center gap-8">
+                        <a class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-200"
+                            href="#">Home</a>
+                        <a class="text-sm font-medium text-primary" href="#">New Arrivals</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-200"
+                            href="#">Sarees</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-200"
+                            href="#">Lehengas</a>
+                    </nav>
+                    <div class="flex items-center gap-3">
+                        <button
+                            class="flex size-10 items-center justify-center rounded-lg bg-[#f4f0f2] dark:bg-gray-800 text-[#181114] dark:text-white hover:bg-primary/10 hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                        </button>
+                        <button
+                            class="flex size-10 items-center justify-center rounded-lg bg-[#f4f0f2] dark:bg-gray-800 text-[#181114] dark:text-white hover:bg-primary/10 hover:text-primary transition-colors">
+                            <span class="material-symbols-outlined">account_circle</span>
+                        </button>
+                        <label
+                            class="lg:hidden flex size-10 items-center justify-center rounded-lg bg-[#f4f0f2] dark:bg-gray-800 text-[#181114] dark:text-white hover:bg-primary/10 hover:text-primary transition-colors cursor-pointer select-none"
+                            for="navbar-toggle">
+                            <span class="material-symbols-outlined">menu</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="absolute top-full left-0 z-10 w-full origin-top scale-y-0 opacity-0 transition-all duration-300 ease-in-out peer-checked:scale-y-100 peer-checked:opacity-100 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-800 shadow-xl lg:hidden">
+                <div class="flex flex-col p-6 gap-2">
+                    <div class="md:hidden mb-4">
+                        <label class="relative flex w-full items-center">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 text-[#896172]">
+                                <span class="material-symbols-outlined">search</span>
+                            </div>
+                            <input
+                                class="w-full rounded-lg bg-[#f4f0f2] dark:bg-gray-800 py-2.5 pl-10 pr-4 text-sm text-[#181114] dark:text-white placeholder-[#896172] focus:outline-none focus:ring-2 focus:ring-primary/50 border-none"
+                                placeholder="Search..." type="text" />
+                        </label>
+                    </div>
+                    <a class="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-200 dark:hover:bg-gray-800/50"
+                        href="#">Home</a>
+                    <a class="block rounded-lg bg-primary/10 px-4 py-3 text-base font-medium text-primary dark:bg-primary/20"
+                        href="#">New Arrivals</a>
+                    <a class="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-200 dark:hover:bg-gray-800/50"
+                        href="#">Sarees</a>
+                    <a class="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-200 dark:hover:bg-gray-800/50"
+                        href="#">Lehengas</a>
+                </div>
+            </div>
+        </header>
+        <div class="w-full px-4 py-6 md:px-8 lg:px-12">
+            <div class="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-gray-900 shadow-xl">
+                <div class="relative flex min-h-[500px] flex-col justify-end bg-cover bg-center p-8 md:p-12 lg:p-16"
+                    data-alt="Elegant Indian woman wearing a luxurious red silk saree standing in a palace hallway"
+                    style="background-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMnHO8qBkGCgQDOUOjpPslhyPklBdtqMp-YYot8N0yHoLaMkYLydTdJZ6HVoCA01tXhj4UMUC1lUXpohn9jf54jgXBtIkdTBsOvzkj_rI7hSs4sMuijCpyb2_MywlE9WPqRWyVIhzchcqU8zhShbT20U9HipgnNsT04XR08y1PkhECK_9uiKpUzcSsAqajHmTLsM-90A0clzzntWvCTOrYPYZSpC2dtRuyo2ishpGbwGkXU9gOsLEyd_rf5XYIbDY0DELO0cx7wAxm');">
+                    <div class="relative z-10 max-w-2xl animate-fade-in-up">
+                        <span
+                            class="mb-4 inline-block rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">New
+                            Collection 2024</span>
+                        <h2
+                            class="mb-4 text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+                            Elegance Woven in Tradition
+                        </h2>
+                        <p class="mb-8 text-lg font-medium text-gray-200 md:text-xl">
+                            Discover the finest handloom sarees tailored for the modern woman. Authentic craftsmanship
+                            meets contemporary design.
+                        </p>
+                        <button
+                            class="group inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-8 text-base font-bold text-white transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30">
+                            Shop Now
+                            <span
+                                class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mx-auto flex w-full max-w-7xl flex-col px-4 py-8 md:px-8 lg:px-12">
+            <div class="mb-6 flex items-end justify-between px-2">
+                <h2 class="text-2xl font-bold leading-tight text-[#181114] dark:text-white md:text-3xl">Shop by Category
+                </h2>
+                <a class="hidden text-sm font-bold text-primary hover:underline sm:block" href="#">View All
+                    Categories</a>
+            </div>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-4 md:gap-6">
+                <a class="group relative flex flex-col gap-3 overflow-hidden rounded-xl bg-white dark:bg-white/5 pb-3 shadow-sm transition-shadow hover:shadow-md"
+                    href="#">
+                    <div class="aspect-[3/4] w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Close up texture of golden Kanjivaram silk saree pattern"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEa5UmYKtKp4BuCSDYYs6SHbuKW2MBVfTdsY-OQgjJlZCQ7ugWlDpUAcx4zIjJ0q9yZ8a5aaEvzhBXP6_sgJOQBLfIAqCevHhJMHstLRTQuBl4gXhFlxa__f2-tzfhEXcfKER8ELMVc3bHSQb_6YJis0RXFUHyijCnBa10QoARTvlYeTt7gqzORMhqPxCE7OdoNJ0mdX4VwIoJsFxIpkWkwCrsadY_4lNJwPIFUfQ7cxoYvsyVEUDnen4avswWvKTzQTnF1rMrdm3A');">
+                        </div>
+                    </div>
+                    <div class="px-3">
+                        <h3 class="text-base font-bold text-[#181114] dark:text-white">Kanjivaram</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">45 Items</p>
+                    </div>
+                </a>
+                <a class="group relative flex flex-col gap-3 overflow-hidden rounded-xl bg-white dark:bg-white/5 pb-3 shadow-sm transition-shadow hover:shadow-md"
+                    href="#">
+                    <div class="aspect-[3/4] w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Flowing light blue georgette saree fabric texture"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBa7sr7bbvAo1azlStN6UyjlJC9jVhrm-aPVMSCk3A1jIqnXrEFwoW48QAiTX3kmgmez1LnkiBOZMBJNzwmt7p2ZyfshcvUsfaFt5xc_IwmNs8h9GwkrReApOAPOj50jkcx4XJ1vTQlIj_w3_GLWUz1DSHVkaB8OJDEhgjG6Vm4p4_ka_G0USevfcjmVbRDFmdF17pVdMkfwH3lYKLSxoD9NnINW1ki318v0Og7T8jBGezAVdwvDdO8cf7sjyRo8iTuxcXVHs44sQzG');">
+                        </div>
+                    </div>
+                    <div class="px-3">
+                        <h3 class="text-base font-bold text-[#181114] dark:text-white">Georgette</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">32 Items</p>
+                    </div>
+                </a>
+                <a class="group relative flex flex-col gap-3 overflow-hidden rounded-xl bg-white dark:bg-white/5 pb-3 shadow-sm transition-shadow hover:shadow-md"
+                    href="#">
+                    <div class="aspect-[3/4] w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Rich patterned Banarasi silk saree in purple and gold"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2j_5tF24DXTX2b5CC9cg7JfNTsiAKWlMEKPooUU7FEXQd74Ufy1KGdzCHi_dX9kb_G_gDAiGCwL4LfkUEbbZu2IVKeu3TxyCH1WLYEG4V547O86lh8xNJABHJhNZuLmP57nyvb8FrdRCXKcJeLdZIULWHdoUQU6psvEuhX7BfpAwNH2_nwlFeO6VfAFQQWj9fuzZN6Kh2Rvmxtvyqj63a7JXQZAkVESycy2xX1QILi5CoqoHHkJ2RJOCiSuvB8Cy8baUMkck4iJkN');">
+                        </div>
+                    </div>
+                    <div class="px-3">
+                        <h3 class="text-base font-bold text-[#181114] dark:text-white">Banarasi</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">28 Items</p>
+                    </div>
+                </a>
+                <a class="group relative flex flex-col gap-3 overflow-hidden rounded-xl bg-white dark:bg-white/5 pb-3 shadow-sm transition-shadow hover:shadow-md"
+                    href="#">
+                    <div class="aspect-[3/4] w-full overflow-hidden bg-gray-200">
+                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Simple and elegant white cotton saree with border"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFgwDSSK3AnELyOLWX2Q98dJ1K5FLE9iB3_o0oiWGE2IdDlM6UX8xlwTygWs8--0OY65Ry8YzMawiMHqL1u6K0wCs-jMMa4PKzT5W2LZ4qJuPyhEjXsyFK_UXOg875kVgL0AOa7osOMYiQt8aziuO0gPhmXM-Rvx1-_y3s_OVj0IgWE_Uq7o8HGSUciTZv8ErS5q09otCtaOcsHCRkdOGnfKfUPX6L_odJN_cGyEYgj63Yf65ajulZMcGfYuomZHFjkh5hO2hHa8ju');">
+                        </div>
+                    </div>
+                    <div class="px-3">
+                        <h3 class="text-base font-bold text-[#181114] dark:text-white">Cotton</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">50+ Items</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="w-full px-4 py-12 md:px-8 lg:px-12">
+            <div
+                class="mx-auto grid max-w-7xl gap-8 overflow-hidden rounded-2xl bg-[#221018] text-white lg:grid-cols-2">
+                <div class="relative h-[400px] w-full lg:h-auto">
+                    <div class="absolute inset-0 h-full w-full bg-cover bg-center"
+                        data-alt="Bride in a luxurious pink and gold wedding saree smiling"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRubkkdXLmI4uB83NXOkEppgY2PtAEEnbKEXI3hHHolpm3Hy7Zv5XdkJ5yXdOhIQwwyr1QbfUdJeoyAjwhL0mfIVvgd1IspUunZABUv52L32Kp6ggKnworRpYUeX721xzABMJLJQ8A9_Cprxeb75thHA5FOObQmFrrgh8XwVE12SrlGN5Qh3zxMS3g1dr3DVVldhyn-hkdRNgZt6sdYMhIlQRcwa2xlPrIFcaPg8-5vIVHK8PdbMxpbnDKf5OOFtRmZsXpw9y8pPse');">
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center p-8 lg:p-16">
+                    <h3 class="mb-2 text-sm font-bold uppercase tracking-widest text-primary">Featured Collection</h3>
+                    <h2 class="mb-4 text-3xl font-bold md:text-4xl">The Royal Wedding Edit</h2>
+                    <p class="mb-8 text-gray-300">
+                        Hand-picked sarees for your special day. Intricate zari work, pure silk weaves, and colors that
+                        celebrate love and tradition. Make your moment unforgettable.
+                    </p>
+                    <button
+                        class="w-fit rounded-lg bg-white px-8 py-3 text-sm font-bold text-[#221018] transition-colors hover:bg-gray-100">
+                        Explore Collection
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mx-auto flex w-full max-w-7xl flex-col px-4 py-8 md:px-8 lg:px-12">
+            <div class="mb-6 flex items-end justify-between px-2">
+                <h2 class="text-2xl font-bold leading-tight text-[#181114] dark:text-white md:text-3xl">New Arrivals
+                </h2>
+                <div class="flex gap-2">
+                    <button
+                        class="flex size-8 items-center justify-center rounded-full border border-gray-200 bg-white hover:bg-gray-50 dark:border-white/10 dark:bg-white/5 dark:text-white">
+                        <span class="material-symbols-outlined text-sm">arrow_back</span>
+                    </button>
+                    <button
+                        class="flex size-8 items-center justify-center rounded-full border border-gray-200 bg-white hover:bg-gray-50 dark:border-white/10 dark:bg-white/5 dark:text-white">
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                <div class="group flex flex-col gap-3">
+                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
+                        <div class="h-full w-full bg-cover bg-center"
+                            data-alt="Royal Blue Silk Saree with golden border"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5kM3wdMNABwULdjIuT96Z0rmYiIPgai0cuIpiWXMR49edQ1xh6dv1SkI06qZhohpmKnTbfKYZJHlrUEPSqGDjHmRf1-FUvCKb7SjCxVjPBMigyGCZz81kE_gwvhn7ufoTWnPKRQKMSxbS--DWN2oJM-9i2ffUkh5SS2QyVVh4rqKyTTindlFX_jB_1awSl_1LS6CSSWcT2Gca6hKssKwgA-I70edcZBHu8h2Q_I_VMF2ULl-v-XJvapLHssa-gwBrpL7eunlrolix');">
+                        </div>
+                        <button
+                            class="absolute bottom-3 right-3 flex size-10 translate-y-4 items-center justify-center rounded-full bg-white text-primary shadow-lg opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:bg-background-dark dark:text-white">
+                            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+                        </button>
+                        <div
+                            class="absolute left-3 top-3 rounded bg-white px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-[#181114]">
+                            New</div>
+                    </div>
+                    <div>
+                        <h3 class="truncate text-sm font-medium text-[#181114] dark:text-white">Royal Blue Mysore Silk
+                        </h3>
+                        <p class="mt-1 text-sm font-bold text-primary">$125.00</p>
+                    </div>
+                </div>
+                <div class="group flex flex-col gap-3">
+                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
+                        <div class="h-full w-full bg-cover bg-center" data-alt="Pink embroidered designer saree"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtRr4IOzALENjop3iC8Z_fk084g3mP3EXcE0TtI_12pCicY4Muy5K6un2O_bhLf1dgRoqXf6dVAZmJe3ztKNyv1k0QTp7UljLvneF35KJ0ilnds4DnC3Kp1BrBrlG-h5PswF9gttCoR5E93BukU6CB5DbsSc9RQbcVvq8Zfn6pwDqR0q7gAsxv1k6zAXW-I6ZHesToqtO74B35snFk48CmFl-Sj9pOrzeG7SdjWBgnOTVaUNsOCJXShFjlZYW214-8WoXUOCT3-lG1');">
+                        </div>
+                        <button
+                            class="absolute bottom-3 right-3 flex size-10 translate-y-4 items-center justify-center rounded-full bg-white text-primary shadow-lg opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:bg-background-dark dark:text-white">
+                            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+                        </button>
+                    </div>
+                    <div>
+                        <h3 class="truncate text-sm font-medium text-[#181114] dark:text-white">Pink Embroidered Drape
+                        </h3>
+                        <p class="mt-1 text-sm font-bold text-primary">$189.00</p>
+                    </div>
+                </div>
+                <div class="group flex flex-col gap-3">
+                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
+                        <div class="h-full w-full bg-cover bg-center" data-alt="Traditional green saree with red border"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGWS1l_L6U0x8IJdrTN1zp_0MvN7r_0ElmPh0bjib7-r6YreJDDUJWswXL8dxvn3uLxEjg7CDxvvkbrbSHmgTTs8RIYAemCLSPbHprf_OWzKI69IT70snk7-E9zhkXj7lwYSJpKdo6Req00dzZxvFqagV5BjJMS9Cxvf34burXcvAyCJ1riv80uwmJLGaRzLoLH2dYvZ7WssUs4YKTo3bQbBAZr9krPJCoTP7YyQV5afww2avkBIfMzqKnsoWqjiZSvDbHR-muqZGr');">
+                        </div>
+                        <button
+                            class="absolute bottom-3 right-3 flex size-10 translate-y-4 items-center justify-center rounded-full bg-white text-primary shadow-lg opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:bg-background-dark dark:text-white">
+                            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+                        </button>
+                    </div>
+                    <div>
+                        <h3 class="truncate text-sm font-medium text-[#181114] dark:text-white">Traditional Green Silk
+                        </h3>
+                        <p class="mt-1 text-sm font-bold text-primary">$145.00</p>
+                    </div>
+                </div>
+                <div class="group flex flex-col gap-3">
+                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
+                        <div class="h-full w-full bg-cover bg-center" data-alt="Modern black saree with silver motifs"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhzrh93g09l13VNzi7qizpCaSbr1eUjifmgj0siIXgUKF_1EuPau3y5pDu6JeXnZfxZ6ouXKCy-qeUvSjpQqD13XQsaNV9YIABlS52dSqK2kY8f8UPHNiBB5neEVGUjFsWdJiSbMgUGPySLkyqZOFcmPjj1Sppbd6Op7neHwSyqG1gUlV2gbFGym3hhRhgfQseNPsv9UpHFRu4QRVmquZ-YILB_18Nmwz65ABOE7MnzaYbRz9jSxIqEiX2kpjqHR5j2XJ8cBqmjz8l');">
+                        </div>
+                        <button
+                            class="absolute bottom-3 right-3 flex size-10 translate-y-4 items-center justify-center rounded-full bg-white text-primary shadow-lg opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:bg-background-dark dark:text-white">
+                            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+                        </button>
+                        <div
+                            class="absolute left-3 top-3 rounded bg-primary px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
+                            -20%</div>
+                    </div>
+                    <div>
+                        <h3 class="truncate text-sm font-medium text-[#181114] dark:text-white">Midnight Black Georgette
+                        </h3>
+                        <div class="mt-1 flex gap-2">
+                            <p class="text-sm font-bold text-primary">$88.00</p>
+                            <p class="text-sm text-gray-400 line-through">$110.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group hidden flex-col gap-3 sm:flex lg:hidden xl:flex">
+                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
+                        <div class="h-full w-full bg-cover bg-center" data-alt="Bright yellow festive saree"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7NbE69npOwmKnXhrtzlXtVlrNtHmH-fswCEYUuEzlLoVIcDZNnWlNmoBsmfdbWen6q5wjsVsJtDsITKqAT7LL0EwIC0gVeXLxs23QqXafWnWXsVNuB-iEPVUece0U8zvonXzA_ADu9bs4s__ZheORySKWu7sFV3qGvSc9rZqYJObl9JLtKG7vARHJQ-kHmpwc7c04_CBu5XUGrk1QEngUaoCJMjbHmtrNqqIaVnvbfsnv5UuJmtKRVzfbYQUlJkc-JxPtPhQVrWnG');">
+                        </div>
+                        <button
+                            class="absolute bottom-3 right-3 flex size-10 translate-y-4 items-center justify-center rounded-full bg-white text-primary shadow-lg opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:bg-background-dark dark:text-white">
+                            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+                        </button>
+                    </div>
+                    <div>
+                        <h3 class="truncate text-sm font-medium text-[#181114] dark:text-white">Sunshine Yellow Weave
+                        </h3>
+                        <p class="mt-1 text-sm font-bold text-primary">$130.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <button
+                    class="rounded-lg border border-gray-200 bg-transparent px-6 py-2.5 text-sm font-bold text-[#181114] transition-colors hover:bg-gray-50 dark:border-white/10 dark:text-white dark:hover:bg-white/5">
+                    View All New Arrivals
+                </button>
+            </div>
+        </div>
+        <div class="mt-12 w-full bg-[#f4f0f2] py-16 dark:bg-white/5">
+            <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
+                <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-2xl">verified</span>
+                        </div>
+                        <h3 class="mb-2 text-lg font-bold text-[#181114] dark:text-white">Authentic Quality</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Certified silk mark ensuring 100% pure silk
+                            and authentic handloom.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-2xl">local_shipping</span>
+                        </div>
+                        <h3 class="mb-2 text-lg font-bold text-[#181114] dark:text-white">Free Shipping</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Complimentary shipping on all domestic
+                            orders above $50.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-2xl">published_with_changes</span>
+                        </div>
+                        <h3 class="mb-2 text-lg font-bold text-[#181114] dark:text-white">Easy Returns</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">7-day hassle-free return policy for peace of
+                            mind.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                            <span class="material-symbols-outlined text-2xl">support_agent</span>
+                        </div>
+                        <h3 class="mb-2 text-lg font-bold text-[#181114] dark:text-white">24/7 Support</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Dedicated customer support to assist you
+                            anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="w-full bg-white pb-8 pt-16 text-[#181114] dark:bg-background-dark dark:text-gray-300">
+            <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
+                <div class="grid gap-12 lg:grid-cols-4">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-2">
+                            <div class="flex size-6 items-center justify-center rounded bg-primary text-white">
+                                <span class="material-symbols-outlined text-sm">filter_vintage</span>
+                            </div>
+                            <h2 class="text-lg font-bold text-[#181114] dark:text-white">Oveera</h2>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                            Bringing the legacy of Indian handlooms to the modern world. Every saree tells a story.
+                        </p>
+                        <div class="flex gap-4">
+                            <a class="text-gray-400 hover:text-primary" href="#"><span
+                                    class="material-symbols-outlined">public</span></a>
+                            <a class="text-gray-400 hover:text-primary" href="#"><span
+                                    class="material-symbols-outlined">photo_camera</span></a>
+                            <a class="text-gray-400 hover:text-primary" href="#"><span
+                                    class="material-symbols-outlined">send</span></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="mb-4 text-sm font-bold uppercase tracking-wider text-[#181114] dark:text-white">Shop
+                        </h3>
+                        <ul class="flex flex-col gap-2 text-sm">
+                            <li><a class="hover:text-primary hover:underline" href="#">All Sarees</a></li>
+                            <li><a class="hover:text-primary hover:underline" href="#">New Arrivals</a></li>
+                            <li><a class="hover:text-primary hover:underline" href="#">Best Sellers</a></li>
+                            <li><a class="hover:text-primary hover:underline" href="#">Sale</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="mb-4 text-sm font-bold uppercase tracking-wider text-[#181114] dark:text-white">
+                            Company</h3>
+                        <ul class="flex flex-col gap-2 text-sm">
+                            <li><a class="hover:text-primary hover:underline" href="#">About Us</a></li>
+                            <li><a class="hover:text-primary hover:underline" href="#">Contact</a></li>
+                            <li><a class="hover:text-primary hover:underline" href="#">FAQ</a></li>
+                            <li><a class="hover:text-primary hover:underline" href="#">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="mb-4 text-sm font-bold uppercase tracking-wider text-[#181114] dark:text-white">Stay
+                            Updated</h3>
+                        <p class="mb-4 text-sm text-gray-500 dark:text-gray-400">Subscribe to get special offers and
+                            updates.</p>
+                        <form class="flex flex-col gap-2 sm:flex-row lg:flex-col xl:flex-row">
+                            <input
+                                class="flex-1 rounded-lg border border-gray-300 bg-transparent px-4 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:border-gray-700"
+                                placeholder="Enter your email" type="email" />
+                            <button
+                                class="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-primary/90">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div
+                    class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-100 pt-8 text-sm text-gray-500 dark:border-gray-800 sm:flex-row">
+                    <p>© 2024 Oveera Collections. All rights reserved.</p>
+                    <div class="flex gap-6">
+                        <a class="hover:text-primary" href="#">Privacy Policy</a>
+                        <a class="hover:text-primary" href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

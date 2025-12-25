@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oveera Collections</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#e91e63',
+                        surface: '#faf7f9',
+                        textDark: '#181114',
+                        textMuted: '#896172',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-jakarta bg-surface text-textDark">
+
+    <!-- ================= HEADER ================= -->
+    <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white relative">
+
+        <input type="checkbox" id="navbar-toggle" class="peer hidden" />
+
+        <!-- NAVBAR -->
+        <div class="px-6 py-4 lg:px-20">
+            <div class="mx-auto flex max-w-7xl items-center justify-between gap-6">
+
+                <!-- LOGO -->
+<div class="flex items-center gap-3">
+    <img
+        src="oveera_logo.jpg"
+        alt="Oveera Collections"
+        class="h-8 sm:h-9 lg:h-11 w-auto object-contain"
+    />
+    <span class="text-sm sm:text-lg font-bold whitespace-nowrap">
+        Oveera Collections
+    </span>
+</div>
+
+
+
+                <!-- SEARCH (DESKTOP) -->
+                <div class="hidden md:flex flex-1 max-w-md">
+                    <div class="relative w-full">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-textMuted">search</span>
+                        <input type="text" placeholder="Search for sarees, lehengas..."
+                            class="w-full rounded-lg bg-gray-100 pl-10 pr-4 py-2.5 text-sm focus:ring-2 focus:ring-primary/40 border-none" />
+                    </div>
+                </div>
+
+                <!-- NAV LINKS -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#" class="text-sm font-medium hover:text-primary">Home</a>
+                    <a href="#" class="text-sm font-medium text-primary">New Arrivals</a>
+                    <a href="#" class="text-sm font-medium hover:text-primary">Sarees</a>
+                    <a href="#" class="text-sm font-medium hover:text-primary">Lehengas</a>
+                </nav>
+
+                <!-- ACTIONS -->
+                <div class="flex items-center gap-3">
+                    <button class="size-10 flex items-center justify-center rounded-lg bg-gray-100 hover:text-primary">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </button>
+                    <button class="size-10 flex items-center justify-center rounded-lg bg-gray-100 hover:text-primary">
+                        <span class="material-symbols-outlined">account_circle</span>
+                    </button>
+
+                    <!-- MOBILE MENU BUTTON -->
+                    <label for="navbar-toggle"
+                        class="lg:hidden size-10 flex items-center justify-center rounded-lg bg-gray-100 cursor-pointer">
+                        <span class="material-symbols-outlined">menu</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <!-- MOBILE MENU (OVERLAY MODE) -->
+        <div class="lg:hidden absolute left-0 top-full w-full
+           z-40
+           overflow-hidden
+           max-h-0 opacity-0
+           transition-all duration-300 ease-in-out
+           peer-checked:max-h-[420px] peer-checked:opacity-100
+           border-t border-gray-200 bg-white shadow-2xl">
+
+            <div class="p-5 space-y-3">
+
+                <!-- MOBILE SEARCH -->
+                <div class="relative">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-textMuted">
+                        search
+                    </span>
+                    <input type="text" placeholder="Search..."
+                        class="w-full rounded-lg bg-gray-100 pl-10 pr-4 py-2.5 text-sm border-none" />
+                </div>
+
+                <a href="#" class="block rounded-lg px-4 py-3 font-medium hover:bg-gray-100">
+                    Home
+                </a>
+
+                <a href="#" class="block rounded-lg px-4 py-3 font-medium bg-primary/10 text-primary">
+                    New Arrivals
+                </a>
+
+                <a href="#" class="block rounded-lg px-4 py-3 font-medium hover:bg-gray-100">
+                    Sarees
+                </a>
+
+                <a href="#" class="block rounded-lg px-4 py-3 font-medium hover:bg-gray-100">
+                    Lehengas
+                </a>
+
+            </div>
+        </div>
+
+
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative z-0 px-4 sm:px-6 lg:px-0 mt-6 sm:mt-8">
+        <div class="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-gray-900 shadow-xl">
+            <div class="relative flex min-h-[420px] sm:min-h-[500px] lg:min-h-[560px] items-end bg-cover bg-center p-6 sm:p-10 lg:p-16"
+                style="
+            background-image:
+            linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.25)),
+            url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMnHO8qBkGCgQDOUOjpPslhyPklBdtqMp-YYot8N0yHoLaMkYLydTdJZ6HVoCA01tXhj4UMUC1lUXpohn9jf54jgXBtIkdTBsOvzkj_rI7hSs4sMuijCpyb2_MywlE9WPqRWyVIhzchcqU8zhShbT20U9HipgnNsT04XR08y1PkhECK_9uiKpUzcSsAqajHmTLsM-90A0clzzntWvCTOrYPYZSpC2dtRuyo2ishpGbwGkXU9gOsLEyd_rf5XYIbDY0DELO0cx7wAxm');
+        ">
+
+                <!-- CONTENT -->
+                <div class="relative z-10 max-w-xl text-white">
+                    <span
+                        class="mb-3 inline-block rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+                        New Collection 2024
+                    </span>
+
+                    <h2 class="mb-3 text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight">
+                        Elegance Woven in Tradition
+                    </h2>
+
+                    <p class="mb-6 text-sm sm:text-base lg:text-xl text-gray-200 leading-relaxed">
+                        Discover the finest handloom sarees tailored for the modern woman.
+                        Authentic craftsmanship meets contemporary design.
+                    </p>
+
+                    <button
+                        class="inline-flex items-center gap-2 rounded-lg bg-primary px-6 sm:px-8 py-3 text-sm sm:text-base font-bold transition hover:bg-primary/90">
+                        Shop Now
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SHOP BY CATEGORY ================= -->
+    <section class="bg-[#faf7f9]">
+        <div class="mx-auto max-w-7xl px-4 py-10 md:px-8 lg:px-12">
+
+            <!-- SECTION HEADER -->
+            <div class="mb-6 flex items-end justify-between">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#181114]">
+                    Shop by Category
+                </h2>
+                <a href="#" class="hidden sm:block text-sm font-bold text-primary hover:underline">
+                    View All Categories
+                </a>
+            </div>
+
+            <!-- CATEGORY GRID -->
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-4 md:gap-6">
+
+                <!-- CARD -->
+                <a href="#"
+                    class="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition hover:shadow-md">
+
+                    <!-- IMAGE -->
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-200">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEa5UmYKtKp4BuCSDYYs6SHbuKW2MBVfTdsY-OQgjJlZCQ7ugWlDpUAcx4zIjJ0q9yZ8a5aaEvzhBXP6_sgJOQBLfIAqCevHhJMHstLRTQuBl4gXhFlxa__f2-tzfhEXcfKER8ELMVc3bHSQb_6YJis0RXFUHyijCnBa10QoARTvlYeTt7gqzORMhqPxCE7OdoNJ0mdX4VwIoJsFxIpkWkwCrsadY_4lNJwPIFUfQ7cxoYvsyVEUDnen4avswWvKTzQTnF1rMrdm3A');">
+                        </div>
+                    </div>
+
+                    <!-- TEXT -->
+                    <div class="px-3 py-3 text-center">
+                        <h3 class="text-base font-bold text-[#181114]">Kanjivaram</h3>
+                        <p class="text-xs text-gray-500">45 Items</p>
+                    </div>
+                </a>
+
+                <!-- CARD -->
+                <a href="#"
+                    class="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition hover:shadow-md">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-200">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBa7sr7bbvAo1azlStN6UyjlJC9jVhrm-aPVMSCk3A1jIqnXrEFwoW48QAiTX3kmgmez1LnkiBOZMBJNzwmt7p2ZyfshcvUsfaFt5xc_IwmNs8h9GwkrReApOAPOj50jkcx4XJ1vTQlIj_w3_GLWUz1DSHVkaB8OJDEhgjG6Vm4p4_ka_G0USevfcjmVbRDFmdF17pVdMkfwH3lYKLSxoD9NnINW1ki318v0Og7T8jBGezAVdwvDdO8cf7sjyRo8iTuxcXVHs44sQzG');">
+                        </div>
+                    </div>
+                    <div class="px-3 py-3 text-center">
+                        <h3 class="text-base font-bold text-[#181114]">Georgette</h3>
+                        <p class="text-xs text-gray-500">32 Items</p>
+                    </div>
+                </a>
+
+                <!-- CARD -->
+                <a href="#"
+                    class="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition hover:shadow-md">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-200">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2j_5tF24DXTX2b5CC9cg7JfNTsiAKWlMEKPooUU7FEXQd74Ufy1KGdzCHi_dX9kb_G_gDAiGCwL4LfkUEbbZu2IVKeu3TxyCH1WLYEG4V547O86lh8xNJABHJhNZuLmP57nyvb8FrdRCXKcJeLdZIULWHdoUQU6psvEuhX7BfpAwNH2_nwlFeO6VfAFQQWj9fuzZN6Kh2Rvmxtvyqj63a7JXQZAkVESycy2xX1QILi5CoqoHHkJ2RJOCiSuvB8Cy8baUMkck4iJkN');">
+                        </div>
+                    </div>
+                    <div class="px-3 py-3 text-center">
+                        <h3 class="text-base font-bold text-[#181114]">Banarasi</h3>
+                        <p class="text-xs text-gray-500">28 Items</p>
+                    </div>
+                </a>
+
+                <!-- CARD -->
+                <a href="#"
+                    class="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition hover:shadow-md">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-200">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFgwDSSK3AnELyOLWX2Q98dJ1K5FLE9iB3_o0oiWGE2IdDlM6UX8xlwTygWs8--0OY65Ry8YzMawiMHqL1u6K0wCs-jMMa4PKzT5W2LZ4qJuPyhEjXsyFK_UXOg875kVgL0AOa7osOMYiQt8aziuO0gPhmXM-Rvx1-_y3s_OVj0IgWE_Uq7o8HGSUciTZv8ErS5q09otCtaOcsHCRkdOGnfKfUPX6L_odJN_cGyEYgj63Yf65ajulZMcGfYuomZHFjkh5hO2hHa8ju');">
+                        </div>
+                    </div>
+                    <div class="px-3 py-3 text-center">
+                        <h3 class="text-base font-bold text-[#181114]">Cotton</h3>
+                        <p class="text-xs text-gray-500">50+ Items</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FEATURED COLLECTIONS ================= -->
+    <section class="bg-[#faf7f9]">
+        <div class="mx-auto max-w-7xl px-4 py-12 md:px-8 lg:px-12">
+
+            <!-- HEADER -->
+            <div class="mb-6 flex items-end justify-between">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#181114]">
+                    Featured Collections
+                </h2>
+                <a href="#" class="hidden sm:block text-sm font-bold text-primary hover:underline">
+                    View All
+                </a>
+            </div>
+
+            <!-- GRID -->
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                <!-- CARD -->
+                <a href="#" class="group relative overflow-hidden rounded-2xl bg-gray-900 shadow-lg">
+                    <div class="aspect-[4/5] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                        style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMnHO8qBkGCgQDOUOjpPslhyPklBdtqMp-YYot8N0yHoLaMkYLydTdJZ6HVoCA01tXhj4UMUC1lUXpohn9jf54jgXBtIkdTBsOvzkj_rI7hSs4sMuijCpyb2_MywlE9WPqRWyVIhzchcqU8zhShbT20U9HipgnNsT04XR08y1PkhECK_9uiKpUzcSsAqajHmTLsM-90A0clzzntWvCTOrYPYZSpC2dtRuyo2ishpGbwGkXU9gOsLEyd_rf5XYIbDY0DELO0cx7wAxm');">
+                    </div>
+
+                    <!-- OVERLAY -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+                    <!-- TEXT -->
+                    <div class="absolute bottom-0 z-10 p-5 text-white">
+                        <h3 class="text-xl font-bold">Wedding Special Sarees</h3>
+                        <p class="text-sm text-gray-200">Premium handwoven designs</p>
+                    </div>
+                </a>
+
+                <!-- CARD 2 -->
+                <a href="#" class="group relative overflow-hidden rounded-2xl bg-gray-900 shadow-lg">
+                    <div class="aspect-[4/5] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                        style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2j_5tF24DXTX2b5CC9cg7JfNTsiAKWlMEKPooUU7FEXQd74Ufy1KGdzCHi_dX9kb_G_gDAiGCwL4LfkUEbbZu2IVKeu3TxyCH1WLYEG4V547O86lh8xNJABHJhNZuLmP57nyvb8FrdRCXKcJeLdZIULWHdoUQU6psvEuhX7BfpAwNH2_nwlFeO6VfAFQQWj9fuzZN6Kh2Rvmxtvyqj63a7JXQZAkVESycy2xX1QILi5CoqoHHkJ2RJOCiSuvB8Cy8baUMkck4iJkN');">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 z-10 p-5 text-white">
+                        <h3 class="text-xl font-bold">Festive Wear</h3>
+                        <p class="text-sm text-gray-200">Bright & elegant styles</p>
+                    </div>
+                </a>
+
+                <!-- CARD 3 -->
+                <a href="#" class="group relative overflow-hidden rounded-2xl bg-gray-900 shadow-lg">
+                    <div class="aspect-[4/5] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                        style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFgwDSSK3AnELyOLWX2Q98dJ1K5FLE9iB3_o0oiWGE2IdDlM6UX8xlwTygWs8--0OY65Ry8YzMawiMHqL1u6K0wCs-jMMa4PKzT5W2LZ4qJuPyhEjXsyFK_UXOg875kVgL0AOa7osOMYiQt8aziuO0gPhmXM-Rvx1-_y3s_OVj0IgWE_Uq7o8HGSUciTZv8ErS5q09otCtaOcsHCRkdOGnfKfUPX6L_odJN_cGyEYgj63Yf65ajulZMcGfYuomZHFjkh5hO2hHa8ju');">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 z-10 p-5 text-white">
+                        <h3 class="text-xl font-bold">Everyday Comfort</h3>
+                        <p class="text-sm text-gray-200">Lightweight cotton sarees</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+<!-- ================= ROYAL WEDDING EDIT ================= -->
+<section class=" bg-[#f4f0f2]">
+    <div class="w-full px-4 py-12 md:px-8 lg:px-12">
+        <div
+            class="mx-auto grid max-w-7xl overflow-hidden rounded-2xl bg-[#221018] text-white shadow-xl lg:grid-cols-2">
+
+            <!-- IMAGE -->
+            <div class="relative min-h-[280px] sm:min-h-[360px] lg:min-h-full">
+                <div
+                    class="absolute inset-0 bg-cover bg-center"
+                    style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRubkkdXLmI4uB83NXOkEppgY2PtAEEnbKEXI3hHHolpm3Hy7Zv5XdkJ5yXdOhIQwwyr1QbfUdJeoyAjwhL0mfIVvgd1IspUunZABUv52L32Kp6ggKnworRpYUeX721xzABMJLJQ8A9_Cprxeb75thHA5FOObQmFrrgh8XwVE12SrlGN5Qh3zxMS3g1dr3DVVldhyn-hkdRNgZt6sdYMhIlQRcwa2xlPrIFcaPg8-5vIVHK8PdbMxpbnDKf5OOFtRmZsXpw9y8pPse');">
+                </div>
+
+                <!-- GRADIENT OVERLAY (Mobile readability) -->
+                <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent"></div>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="flex flex-col justify-center p-6 sm:p-8 lg:p-16">
+                <span class="mb-2 text-xs font-bold uppercase tracking-widest text-primary">
+                    Featured Collection
+                </span>
+
+                <h2 class="mb-4 text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
+                    The Royal Wedding Edit
+                </h2>
+
+                <p class="mb-8 max-w-xl text-sm sm:text-base text-gray-300 leading-relaxed">
+                    Hand-picked sarees for your special day. Intricate zari work, pure silk
+                    weaves, and colors that celebrate love and tradition.
+                    Make your moment unforgettable.
+                </p>
+
+                <button
+                    class="w-fit rounded-lg bg-white px-8 py-3 text-sm font-bold text-[#221018]
+                           transition hover:bg-gray-100">
+                    Explore Collection
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class=" bg-[#f4f0f2]">
+  <div class="mx-auto max-w-7xl px-4 py-10 md:px-8 lg:px-12">
+
+    <!-- HEADER -->
+    <div class="mb-6 flex items-end justify-between">
+      <h2 class="text-2xl md:text-3xl font-bold text-[#181114]">
+        New Arrivals
+      </h2>
+
+      <!-- NAV BUTTONS -->
+      <div class="hidden sm:flex gap-2">
+        <button class="flex size-8 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50">
+          <span class="material-symbols-outlined text-sm">arrow_back</span>
+        </button>
+        <button class="flex size-8 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50">
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PRODUCTS GRID -->
+    <div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+
+      <!-- PRODUCT CARD -->
+      <div class="group flex flex-col">
+        <div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+
+          <!-- IMAGE -->
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+            style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5kM3wdMNABwULdjIuT96Z0rmYiIPgai0cuIpiWXMR49edQ1xh6dv1SkI06qZhohpmKnTbfKYZJHlrUEPSqGDjHmRf1-FUvCKb7SjCxVjPBMigyGCZz81kE_gwvhn7ufoTWnPKRQKMSxbS--DWN2oJM-9i2ffUkh5SS2QyVVh4rqKyTTindlFX_jB_1awSl_1LS6CSSWcT2Gca6hKssKwgA-I70edcZBHu8h2Q_I_VMF2ULl-v-XJvapLHssa-gwBrpL7eunlrolix');">
+          </div>
+
+          <!-- BADGE -->
+          <span class="absolute left-3 top-3 rounded bg-white px-2 py-1 text-[10px] font-bold uppercase">
+            New
+          </span>
+
+          <!-- ACTION -->
+          <button
+            class="absolute bottom-3 right-3 flex size-10 items-center justify-center rounded-full
+                   bg-white text-primary shadow-lg
+                   opacity-100 sm:opacity-0
+                   sm:translate-y-4
+                   transition-all group-hover:translate-y-0 group-hover:opacity-100">
+            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          </button>
+        </div>
+
+        <!-- TEXT -->
+        <div class="mt-3">
+          <h3 class="truncate text-sm font-medium text-[#181114]">
+            Royal Blue Mysore Silk
+          </h3>
+          <p class="mt-1 text-sm font-bold text-primary">$125.00</p>
+        </div>
+      </div>
+
+      <!-- PRODUCT CARD (DISCOUNT) -->
+      <div class="group flex flex-col">
+        <div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-gray-100">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+            style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhzrh93g09l13VNzi7qizpCaSbr1eUjifmgj0siIXgUKF_1EuPau3y5pDu6JeXnZfxZ6ouXKCy-qeUvSjpQqD13XQsaNV9YIABlS52dSqK2kY8f8UPHNiBB5neEVGUjFsWdJiSbMgUGPySLkyqZOFcmPjj1Sppbd6Op7neHwSyqG1gUlV2gbFGym3hhRhgfQseNPsv9UpHFRu4QRVmquZ-YILB_18Nmwz65ABOE7MnzaYbRz9jSxIqEiX2kpjqHR5j2XJ8cBqmjz8l');">
+          </div>
+
+          <span class="absolute left-3 top-3 rounded bg-primary px-2 py-1 text-[10px] font-bold text-white">
+            -20%
+          </span>
+
+          <button
+            class="absolute bottom-3 right-3 flex size-10 items-center justify-center rounded-full
+                   bg-white text-primary shadow-lg
+                   opacity-100 sm:opacity-0
+                   sm:translate-y-4
+                   transition-all group-hover:translate-y-0 group-hover:opacity-100">
+            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+          </button>
+        </div>
+
+        <div class="mt-3">
+          <h3 class="truncate text-sm font-medium text-[#181114]">
+            Midnight Black Georgette
+          </h3>
+          <div class="mt-1 flex gap-2">
+            <p class="text-sm font-bold text-primary">$88.00</p>
+            <p class="text-sm text-gray-400 line-through">$110.00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repeat same structure for other products -->
+
+    </div>
+
+    <!-- VIEW ALL -->
+    <div class="mt-10 flex justify-center">
+      <button
+        class="rounded-lg border border-gray-200 px-6 py-2.5 text-sm font-bold
+               text-[#181114] transition hover:bg-gray-50">
+        View All New Arrivals
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= TRUST FEATURES ================= -->
+<section class="w-full bg-[#f4f0f2] py-14">
+    <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+            <!-- FEATURE -->
+            <div
+                class="group flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <div
+                    class="mb-4 flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+                    <span class="material-symbols-outlined text-2xl">verified</span>
+                </div>
+                <h3 class="mb-2 text-base font-bold text-[#181114]">
+                    Authentic Quality
+                </h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Certified silk mark ensuring 100% pure silk and authentic handloom.
+                </p>
+            </div>
+
+            <!-- FEATURE -->
+            <div
+                class="group flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <div
+                    class="mb-4 flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+                    <span class="material-symbols-outlined text-2xl">local_shipping</span>
+                </div>
+                <h3 class="mb-2 text-base font-bold text-[#181114]">
+                    Free Shipping
+                </h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Complimentary shipping on all domestic orders above $50.
+                </p>
+            </div>
+
+            <!-- FEATURE -->
+            <div
+                class="group flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <div
+                    class="mb-4 flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+                    <span class="material-symbols-outlined text-2xl">published_with_changes</span>
+                </div>
+                <h3 class="mb-2 text-base font-bold text-[#181114]">
+                    Easy Returns
+                </h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    7-day hassle-free return policy for complete peace of mind.
+                </p>
+            </div>
+
+            <!-- FEATURE -->
+            <div
+                class="group flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <div
+                    class="mb-4 flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+                    <span class="material-symbols-outlined text-2xl">support_agent</span>
+                </div>
+                <h3 class="mb-2 text-base font-bold text-[#181114]">
+                    24/7 Support
+                </h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Dedicated customer support available anytime you need help.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="w-full bg-white pt-16 pb-8 text-[#181114]">
+    <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
+
+        <!-- TOP FOOTER -->
+        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
+            <!-- BRAND -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="flex size-8 items-center justify-center rounded-lg bg-primary text-white">
+                        <span class="material-symbols-outlined text-lg">filter_vintage</span>
+                    </div>
+                    <h2 class="text-xl font-bold">Oveera</h2>
+                </div>
+
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    Bringing the legacy of Indian handlooms to the modern world.
+                    Every saree tells a story of craftsmanship and culture.
+                </p>
+
+                <div class="flex gap-4 pt-2">
+                    <a href="#" class="text-gray-400 transition hover:text-primary">
+                        <span class="material-symbols-outlined">public</span>
+                    </a>
+                    <a href="#" class="text-gray-400 transition hover:text-primary">
+                        <span class="material-symbols-outlined">photo_camera</span>
+                    </a>
+                    <a href="#" class="text-gray-400 transition hover:text-primary">
+                        <span class="material-symbols-outlined">send</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SHOP -->
+            <div>
+                <h3 class="mb-4 text-sm font-bold uppercase tracking-wider">
+                    Shop
+                </h3>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="transition hover:text-primary">All Sarees</a></li>
+                    <li><a href="#" class="transition hover:text-primary">New Arrivals</a></li>
+                    <li><a href="#" class="transition hover:text-primary">Best Sellers</a></li>
+                    <li><a href="#" class="transition hover:text-primary">Sale</a></li>
+                </ul>
+            </div>
+
+            <!-- COMPANY -->
+            <div>
+                <h3 class="mb-4 text-sm font-bold uppercase tracking-wider">
+                    Company
+                </h3>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="transition hover:text-primary">About Us</a></li>
+                    <li><a href="#" class="transition hover:text-primary">Contact</a></li>
+                    <li><a href="#" class="transition hover:text-primary">FAQ</a></li>
+                    <li><a href="#" class="transition hover:text-primary">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- NEWSLETTER -->
+            <div>
+                <h3 class="mb-4 text-sm font-bold uppercase tracking-wider">
+                    Stay Updated
+                </h3>
+                <p class="mb-4 text-sm text-gray-500">
+                    Subscribe to receive special offers and latest updates.
+                </p>
+
+                <form class="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        class="w-full rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                    <button
+                        class="rounded-lg bg-primary px-5 py-2 text-sm font-bold text-white transition hover:bg-primary/90">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM FOOTER -->
+        <div
+            class="mt-12 flex flex-col items-center gap-4 border-t border-gray-100 pt-6 text-sm text-gray-500 sm:flex-row sm:justify-between">
+            <p>© 2024 Oveera Collections. All rights reserved.</p>
+
+            <div class="flex gap-6">
+                <a href="#" class="transition hover:text-primary">Privacy Policy</a>
+                <a href="#" class="transition hover:text-primary">Terms of Service</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+</body>
+
+</html>
