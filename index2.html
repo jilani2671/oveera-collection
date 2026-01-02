@@ -4,13 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Oveera Collections</title>
+    <title>Saree Haven - Timeless Elegance</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -22,24 +19,25 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#ec136d",
-                        "background-light": "#f8f6f7",
-                        "background-dark": "#221018",
+                        "primary": "#2874f0", "primary-light": "#5494f5",
+                        "secondary": "#fb641b", "secondary-dark": "#d65313",
+                        "background-light": "#f1f3f6", "background-dark": "#172337",
+                        "text-main": "#212121",
+                        "text-muted": "#878787",
                     },
                     fontFamily: {
-                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                        "display": ["Inter", "sans-serif"]
                     },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
             },
         }
     </script>
     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         .hide-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -48,423 +46,610 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        .sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #sidebar-toggle:checked~.sidebar-overlay {
+            display: block;
+        }
+
+        #sidebar-toggle:checked~.sidebar {
+            transform: translateX(0);
+        }
     </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white antialiased transition-colors duration-200">
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-        <header
-            class="sticky top-0 z-50 w-full bg-surface-light dark:bg-surface-dark border-b border-[#f4f0f2] dark:border-gray-800">
-            <input class="peer hidden" id="navbar-toggle" type="checkbox" />
-            <div class="relative z-20 w-full bg-surface-light dark:bg-surface-dark px-6 py-4 lg:px-20">
-                <div class="mx-auto flex max-w-7xl items-center justify-between gap-8">
-                    <div class="flex items-center gap-4">
-                        <div class="flex items-center gap-3">
-                            <div class="size-8 text-primary">
-                                <span class="material-symbols-outlined text-3xl">local_mall</span>
+<body class="bg-background-light text-text-main dark:bg-background-dark dark:text-white">
+    <div class="relative flex h-auto w-full flex-col overflow-x-hidden">
+        <input class="hidden" id="sidebar-toggle" type="checkbox" />
+        <label class="sidebar-overlay fixed inset-0 bg-black/50 z-[60] hidden lg:hidden" for="sidebar-toggle"></label>
+        <div class="sidebar fixed top-0 left-0 h-full w-[280px] bg-white z-[70] shadow-2xl lg:hidden flex flex-col">
+            <div class="p-4 bg-primary text-white flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined">account_circle</span>
+                    <span class="font-semibold">Login &amp; Signup</span>
+                </div>
+                <label class="cursor-pointer" for="sidebar-toggle">
+                    <span class="material-symbols-outlined text-white">close</span>
+                </label>
+            </div>
+            <div class="flex-1 overflow-y-auto py-2">
+                <a class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 text-text-main" href="#">
+                    <span class="material-symbols-outlined text-gray-500">category</span>
+                    All Categories
+                </a>
+                <a class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 text-text-main" href="#">
+                    <span class="material-symbols-outlined text-gray-500">storefront</span>
+                    Offer Zone
+                </a>
+                <div class="border-t border-gray-200 my-2"></div>
+                <a class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 text-text-main" href="#">
+                    <span class="material-symbols-outlined text-gray-500">shopping_bag</span>
+                    My Orders
+                </a>
+                <a class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 text-text-main" href="#">
+                    <span class="material-symbols-outlined text-gray-500">favorite</span>
+                    My Wishlist
+                </a>
+                <a class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 text-text-main" href="#">
+                    <span class="material-symbols-outlined text-gray-500">account_circle</span>
+                    My Account
+                </a>
+                <div class="border-t border-gray-200 my-2"></div>
+                <a class="flex items-center gap-4 px-6 py-3 hover:bg-gray-50 text-text-main" href="#">
+                    <span class="material-symbols-outlined text-gray-500">settings</span>
+                    Settings
+                </a>
+            </div>
+        </div>
+        <header class="sticky top-0 z-50 bg-primary w-full shadow-md">
+            <div class="layout-container flex justify-center w-full">
+                <div class="flex w-full max-w-[1280px] flex-col">
+                    <div class="flex items-center justify-between whitespace-nowrap px-4 md:px-6 py-3 h-16">
+                        <div class="flex items-center gap-4">
+                            <label class="lg:hidden text-white cursor-pointer" for="sidebar-toggle">
+                                <span class="material-symbols-outlined text-2xl">menu</span>
+                            </label>
+                            <div class="flex items-center gap-2 text-white">
+                                <div class="italic font-bold text-xl tracking-tighter">Saree<span
+                                        class="text-[#ffe500] font-normal not-italic ml-0.5">Haven</span></div>
+                                <div
+                                    class="hidden sm:flex text-[10px] italic text-[#f0f0f0] mt-1 hover:underline cursor-pointer">
+                                    Explore <span class="text-[#ffe500] font-bold mx-0.5 not-italic">Plus</span><span
+                                        class="material-symbols-outlined text-[10px] text-[#ffe500]">star</span>
+                                </div>
                             </div>
-                            <h2 class="text-xl font-bold tracking-tight text-[#181114] dark:text-white">Oveera
-                                Collections
-                            </h2>
+                        </div>
+                        <div class="flex-1 max-w-2xl px-4 lg:px-8 hidden md:block">
+                            <label class="flex w-full bg-white rounded-sm shadow-sm">
+                                <input
+                                    class="w-full bg-transparent border-none text-sm text-text-main px-4 py-2 focus:ring-0 placeholder:text-text-muted"
+                                    placeholder="Search for products, brands and more" type="text" />
+                                <button class="px-3 text-primary">
+                                    <span class="material-symbols-outlined">search</span>
+                                </button>
+                            </label>
+                        </div>
+                        <div class="flex items-center gap-6 md:gap-8">
+                            <button
+                                class="bg-white text-primary px-6 py-1 font-semibold text-sm rounded-sm hover:bg-opacity-90 transition-colors hidden md:block shadow-sm">
+                                Login
+                            </button>
+                            <div class="hidden md:flex items-center gap-6 text-white font-medium text-sm">
+                                <a class="hover:text-gray-100 cursor-pointer flex items-center gap-1" href="#">Become a
+                                    Seller</a>
+                                <div class="relative group cursor-pointer">
+                                    <span class="flex items-center gap-1">More <span
+                                            class="material-symbols-outlined text-sm pt-1">expand_more</span></span>
+                                    <div class="absolute right-0 top-full pt-2 hidden group-hover:block">
+                                        <div
+                                            class="bg-white text-text-main shadow-lg rounded-sm py-2 w-48 border border-gray-100">
+                                            <a class="block px-4 py-2 hover:bg-gray-50 text-sm" href="#">Notification
+                                                Preferences</a>
+                                            <a class="block px-4 py-2 hover:bg-gray-50 text-sm" href="#">24x7 Customer
+                                                Care</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="hover:text-gray-100 cursor-pointer flex items-center gap-2" href="#">
+                                    <span class="material-symbols-outlined text-[20px]">shopping_cart</span> Cart
+                                </a>
+                            </div>
+                            <div class="flex md:hidden gap-4 text-white">
+                                <button class="flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[24px]">search</span>
+                                </button>
+                                <button class="flex items-center justify-center relative">
+                                    <span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+                                    <span
+                                        class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#ffe500] text-[10px] text-black font-bold border border-primary">2</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="hidden md:flex max-w-md flex-1">
-                        <label class="relative flex w-full items-center">
-                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 text-[#896172]">
-                                <span class="material-symbols-outlined">search</span>
-                            </div>
+                    <div class="md:hidden px-2 pb-2">
+                        <label class="flex w-full bg-white rounded-sm shadow-sm">
+                            <span class="pl-3 py-2 text-text-muted flex items-center justify-center"><span
+                                    class="material-symbols-outlined text-lg">search</span></span>
                             <input
-                                class="w-full rounded-lg bg-[#f4f0f2] dark:bg-gray-800 py-2.5 pl-10 pr-4 text-sm text-[#181114] dark:text-white placeholder-[#896172] focus:outline-none focus:ring-2 focus:ring-primary/50 border-none"
-                                placeholder="Search for sarees, lehengas..." type="text" />
+                                class="w-full bg-transparent border-none text-sm text-text-main px-2 py-2 focus:ring-0 placeholder:text-text-muted"
+                                placeholder="Search for products, brands and more" type="text" />
                         </label>
                     </div>
-                    <nav class="hidden lg:flex items-center gap-8">
-                        <a class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-200"
-                            href="#">Home</a>
-                        <a class="text-sm font-medium text-primary" href="#">New Arrivals</a>
-                        <a class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-200"
-                            href="#">Sarees</a>
-                        <a class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-200"
-                            href="#">Lehengas</a>
-                    </nav>
-                    <div class="flex items-center gap-3">
-                        <button
-                            class="flex size-10 items-center justify-center rounded-lg bg-[#f4f0f2] dark:bg-gray-800 text-[#181114] dark:text-white hover:bg-primary/10 hover:text-primary transition-colors">
-                            <span class="material-symbols-outlined">shopping_cart</span>
-                        </button>
-                        <button
-                            class="flex size-10 items-center justify-center rounded-lg bg-[#f4f0f2] dark:bg-gray-800 text-[#181114] dark:text-white hover:bg-primary/10 hover:text-primary transition-colors">
-                            <span class="material-symbols-outlined">account_circle</span>
-                        </button>
-                        <label
-                            class="lg:hidden flex size-10 items-center justify-center rounded-lg bg-[#f4f0f2] dark:bg-gray-800 text-[#181114] dark:text-white hover:bg-primary/10 hover:text-primary transition-colors cursor-pointer select-none"
-                            for="navbar-toggle">
-                            <span class="material-symbols-outlined">menu</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="absolute top-full left-0 z-10 w-full origin-top scale-y-0 opacity-0 transition-all duration-300 ease-in-out peer-checked:scale-y-100 peer-checked:opacity-100 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-800 shadow-xl lg:hidden">
-                <div class="flex flex-col p-6 gap-2">
-                    <div class="md:hidden mb-4">
-                        <label class="relative flex w-full items-center">
-                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 text-[#896172]">
-                                <span class="material-symbols-outlined">search</span>
-                            </div>
-                            <input
-                                class="w-full rounded-lg bg-[#f4f0f2] dark:bg-gray-800 py-2.5 pl-10 pr-4 text-sm text-[#181114] dark:text-white placeholder-[#896172] focus:outline-none focus:ring-2 focus:ring-primary/50 border-none"
-                                placeholder="Search..." type="text" />
-                        </label>
-                    </div>
-                    <a class="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-200 dark:hover:bg-gray-800/50"
-                        href="#">Home</a>
-                    <a class="block rounded-lg bg-primary/10 px-4 py-3 text-base font-medium text-primary dark:bg-primary/20"
-                        href="#">New Arrivals</a>
-                    <a class="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-200 dark:hover:bg-gray-800/50"
-                        href="#">Sarees</a>
-                    <a class="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary dark:text-gray-200 dark:hover:bg-gray-800/50"
-                        href="#">Lehengas</a>
                 </div>
             </div>
         </header>
-        <div class="w-full px-4 py-6 md:px-8 lg:px-12">
-            <div class="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-gray-900 shadow-xl">
-                <div class="relative flex min-h-[500px] flex-col justify-end bg-cover bg-center p-8 md:p-12 lg:p-16"
-                    data-alt="Elegant Indian woman wearing a luxurious red silk saree standing in a palace hallway"
-                    style="background-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMnHO8qBkGCgQDOUOjpPslhyPklBdtqMp-YYot8N0yHoLaMkYLydTdJZ6HVoCA01tXhj4UMUC1lUXpohn9jf54jgXBtIkdTBsOvzkj_rI7hSs4sMuijCpyb2_MywlE9WPqRWyVIhzchcqU8zhShbT20U9HipgnNsT04XR08y1PkhECK_9uiKpUzcSsAqajHmTLsM-90A0clzzntWvCTOrYPYZSpC2dtRuyo2ishpGbwGkXU9gOsLEyd_rf5XYIbDY0DELO0cx7wAxm');">
-                    <div class="relative z-10 max-w-2xl animate-fade-in-up">
-                        <span
-                            class="mb-4 inline-block rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">New
-                            Collection 2024</span>
-                        <h2
-                            class="mb-4 text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
-                            Elegance Woven in Tradition
-                        </h2>
-                        <p class="mb-8 text-lg font-medium text-gray-200 md:text-xl">
-                            Discover the finest handloom sarees tailored for the modern woman. Authentic craftsmanship
-                            meets contemporary design.
-                        </p>
-                        <button
-                            class="group inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-8 text-base font-bold text-white transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30">
-                            Shop Now
-                            <span
-                                class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mx-auto flex w-full max-w-7xl flex-col px-4 py-8 md:px-8 lg:px-12">
-            <div class="mb-6 flex items-end justify-between px-2">
-                <h2 class="text-2xl font-bold leading-tight text-[#181114] dark:text-white md:text-3xl">Shop by Category
-                </h2>
-                <a class="hidden text-sm font-bold text-primary hover:underline sm:block" href="#">View All
-                    Categories</a>
-            </div>
-            <div class="grid grid-cols-2 gap-4 sm:grid-cols-4 md:gap-6">
-                <a class="group relative flex flex-col gap-3 overflow-hidden rounded-xl bg-white dark:bg-white/5 pb-3 shadow-sm transition-shadow hover:shadow-md"
-                    href="#">
-                    <div class="aspect-[3/4] w-full overflow-hidden bg-gray-200">
-                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                            data-alt="Close up texture of golden Kanjivaram silk saree pattern"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEa5UmYKtKp4BuCSDYYs6SHbuKW2MBVfTdsY-OQgjJlZCQ7ugWlDpUAcx4zIjJ0q9yZ8a5aaEvzhBXP6_sgJOQBLfIAqCevHhJMHstLRTQuBl4gXhFlxa__f2-tzfhEXcfKER8ELMVc3bHSQb_6YJis0RXFUHyijCnBa10QoARTvlYeTt7gqzORMhqPxCE7OdoNJ0mdX4VwIoJsFxIpkWkwCrsadY_4lNJwPIFUfQ7cxoYvsyVEUDnen4avswWvKTzQTnF1rMrdm3A');">
-                        </div>
-                    </div>
-                    <div class="px-3">
-                        <h3 class="text-base font-bold text-[#181114] dark:text-white">Kanjivaram</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">45 Items</p>
-                    </div>
-                </a>
-                <a class="group relative flex flex-col gap-3 overflow-hidden rounded-xl bg-white dark:bg-white/5 pb-3 shadow-sm transition-shadow hover:shadow-md"
-                    href="#">
-                    <div class="aspect-[3/4] w-full overflow-hidden bg-gray-200">
-                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                            data-alt="Flowing light blue georgette saree fabric texture"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBa7sr7bbvAo1azlStN6UyjlJC9jVhrm-aPVMSCk3A1jIqnXrEFwoW48QAiTX3kmgmez1LnkiBOZMBJNzwmt7p2ZyfshcvUsfaFt5xc_IwmNs8h9GwkrReApOAPOj50jkcx4XJ1vTQlIj_w3_GLWUz1DSHVkaB8OJDEhgjG6Vm4p4_ka_G0USevfcjmVbRDFmdF17pVdMkfwH3lYKLSxoD9NnINW1ki318v0Og7T8jBGezAVdwvDdO8cf7sjyRo8iTuxcXVHs44sQzG');">
-                        </div>
-                    </div>
-                    <div class="px-3">
-                        <h3 class="text-base font-bold text-[#181114] dark:text-white">Georgette</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">32 Items</p>
-                    </div>
-                </a>
-                <a class="group relative flex flex-col gap-3 overflow-hidden rounded-xl bg-white dark:bg-white/5 pb-3 shadow-sm transition-shadow hover:shadow-md"
-                    href="#">
-                    <div class="aspect-[3/4] w-full overflow-hidden bg-gray-200">
-                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                            data-alt="Rich patterned Banarasi silk saree in purple and gold"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2j_5tF24DXTX2b5CC9cg7JfNTsiAKWlMEKPooUU7FEXQd74Ufy1KGdzCHi_dX9kb_G_gDAiGCwL4LfkUEbbZu2IVKeu3TxyCH1WLYEG4V547O86lh8xNJABHJhNZuLmP57nyvb8FrdRCXKcJeLdZIULWHdoUQU6psvEuhX7BfpAwNH2_nwlFeO6VfAFQQWj9fuzZN6Kh2Rvmxtvyqj63a7JXQZAkVESycy2xX1QILi5CoqoHHkJ2RJOCiSuvB8Cy8baUMkck4iJkN');">
-                        </div>
-                    </div>
-                    <div class="px-3">
-                        <h3 class="text-base font-bold text-[#181114] dark:text-white">Banarasi</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">28 Items</p>
-                    </div>
-                </a>
-                <a class="group relative flex flex-col gap-3 overflow-hidden rounded-xl bg-white dark:bg-white/5 pb-3 shadow-sm transition-shadow hover:shadow-md"
-                    href="#">
-                    <div class="aspect-[3/4] w-full overflow-hidden bg-gray-200">
-                        <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                            data-alt="Simple and elegant white cotton saree with border"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFgwDSSK3AnELyOLWX2Q98dJ1K5FLE9iB3_o0oiWGE2IdDlM6UX8xlwTygWs8--0OY65Ry8YzMawiMHqL1u6K0wCs-jMMa4PKzT5W2LZ4qJuPyhEjXsyFK_UXOg875kVgL0AOa7osOMYiQt8aziuO0gPhmXM-Rvx1-_y3s_OVj0IgWE_Uq7o8HGSUciTZv8ErS5q09otCtaOcsHCRkdOGnfKfUPX6L_odJN_cGyEYgj63Yf65ajulZMcGfYuomZHFjkh5hO2hHa8ju');">
-                        </div>
-                    </div>
-                    <div class="px-3">
-                        <h3 class="text-base font-bold text-[#181114] dark:text-white">Cotton</h3>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">50+ Items</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="w-full px-4 py-12 md:px-8 lg:px-12">
-            <div
-                class="mx-auto grid max-w-7xl gap-8 overflow-hidden rounded-2xl bg-[#221018] text-white lg:grid-cols-2">
-                <div class="relative h-[400px] w-full lg:h-auto">
-                    <div class="absolute inset-0 h-full w-full bg-cover bg-center"
-                        data-alt="Bride in a luxurious pink and gold wedding saree smiling"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRubkkdXLmI4uB83NXOkEppgY2PtAEEnbKEXI3hHHolpm3Hy7Zv5XdkJ5yXdOhIQwwyr1QbfUdJeoyAjwhL0mfIVvgd1IspUunZABUv52L32Kp6ggKnworRpYUeX721xzABMJLJQ8A9_Cprxeb75thHA5FOObQmFrrgh8XwVE12SrlGN5Qh3zxMS3g1dr3DVVldhyn-hkdRNgZt6sdYMhIlQRcwa2xlPrIFcaPg8-5vIVHK8PdbMxpbnDKf5OOFtRmZsXpw9y8pPse');">
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center p-8 lg:p-16">
-                    <h3 class="mb-2 text-sm font-bold uppercase tracking-widest text-primary">Featured Collection</h3>
-                    <h2 class="mb-4 text-3xl font-bold md:text-4xl">The Royal Wedding Edit</h2>
-                    <p class="mb-8 text-gray-300">
-                        Hand-picked sarees for your special day. Intricate zari work, pure silk weaves, and colors that
-                        celebrate love and tradition. Make your moment unforgettable.
-                    </p>
-                    <button
-                        class="w-fit rounded-lg bg-white px-8 py-3 text-sm font-bold text-[#221018] transition-colors hover:bg-gray-100">
-                        Explore Collection
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="mx-auto flex w-full max-w-7xl flex-col px-4 py-8 md:px-8 lg:px-12">
-            <div class="mb-6 flex items-end justify-between px-2">
-                <h2 class="text-2xl font-bold leading-tight text-[#181114] dark:text-white md:text-3xl">New Arrivals
-                </h2>
-                <div class="flex gap-2">
-                    <button
-                        class="flex size-8 items-center justify-center rounded-full border border-gray-200 bg-white hover:bg-gray-50 dark:border-white/10 dark:bg-white/5 dark:text-white">
-                        <span class="material-symbols-outlined text-sm">arrow_back</span>
-                    </button>
-                    <button
-                        class="flex size-8 items-center justify-center rounded-full border border-gray-200 bg-white hover:bg-gray-50 dark:border-white/10 dark:bg-white/5 dark:text-white">
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </button>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                <div class="group flex flex-col gap-3">
-                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
-                        <div class="h-full w-full bg-cover bg-center"
-                            data-alt="Royal Blue Silk Saree with golden border"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5kM3wdMNABwULdjIuT96Z0rmYiIPgai0cuIpiWXMR49edQ1xh6dv1SkI06qZhohpmKnTbfKYZJHlrUEPSqGDjHmRf1-FUvCKb7SjCxVjPBMigyGCZz81kE_gwvhn7ufoTWnPKRQKMSxbS--DWN2oJM-9i2ffUkh5SS2QyVVh4rqKyTTindlFX_jB_1awSl_1LS6CSSWcT2Gca6hKssKwgA-I70edcZBHu8h2Q_I_VMF2ULl-v-XJvapLHssa-gwBrpL7eunlrolix');">
-                        </div>
-                        <button
-                            class="absolute bottom-3 right-3 flex size-10 translate-y-4 items-center justify-center rounded-full bg-white text-primary shadow-lg opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:bg-background-dark dark:text-white">
-                            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
-                        </button>
-                        <div
-                            class="absolute left-3 top-3 rounded bg-white px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-[#181114]">
-                            New</div>
-                    </div>
-                    <div>
-                        <h3 class="truncate text-sm font-medium text-[#181114] dark:text-white">Royal Blue Mysore Silk
-                        </h3>
-                        <p class="mt-1 text-sm font-bold text-primary">$125.00</p>
-                    </div>
-                </div>
-                <div class="group flex flex-col gap-3">
-                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
-                        <div class="h-full w-full bg-cover bg-center" data-alt="Pink embroidered designer saree"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtRr4IOzALENjop3iC8Z_fk084g3mP3EXcE0TtI_12pCicY4Muy5K6un2O_bhLf1dgRoqXf6dVAZmJe3ztKNyv1k0QTp7UljLvneF35KJ0ilnds4DnC3Kp1BrBrlG-h5PswF9gttCoR5E93BukU6CB5DbsSc9RQbcVvq8Zfn6pwDqR0q7gAsxv1k6zAXW-I6ZHesToqtO74B35snFk48CmFl-Sj9pOrzeG7SdjWBgnOTVaUNsOCJXShFjlZYW214-8WoXUOCT3-lG1');">
-                        </div>
-                        <button
-                            class="absolute bottom-3 right-3 flex size-10 translate-y-4 items-center justify-center rounded-full bg-white text-primary shadow-lg opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:bg-background-dark dark:text-white">
-                            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
-                        </button>
-                    </div>
-                    <div>
-                        <h3 class="truncate text-sm font-medium text-[#181114] dark:text-white">Pink Embroidered Drape
-                        </h3>
-                        <p class="mt-1 text-sm font-bold text-primary">$189.00</p>
-                    </div>
-                </div>
-                <div class="group flex flex-col gap-3">
-                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
-                        <div class="h-full w-full bg-cover bg-center" data-alt="Traditional green saree with red border"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGWS1l_L6U0x8IJdrTN1zp_0MvN7r_0ElmPh0bjib7-r6YreJDDUJWswXL8dxvn3uLxEjg7CDxvvkbrbSHmgTTs8RIYAemCLSPbHprf_OWzKI69IT70snk7-E9zhkXj7lwYSJpKdo6Req00dzZxvFqagV5BjJMS9Cxvf34burXcvAyCJ1riv80uwmJLGaRzLoLH2dYvZ7WssUs4YKTo3bQbBAZr9krPJCoTP7YyQV5afww2avkBIfMzqKnsoWqjiZSvDbHR-muqZGr');">
-                        </div>
-                        <button
-                            class="absolute bottom-3 right-3 flex size-10 translate-y-4 items-center justify-center rounded-full bg-white text-primary shadow-lg opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:bg-background-dark dark:text-white">
-                            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
-                        </button>
-                    </div>
-                    <div>
-                        <h3 class="truncate text-sm font-medium text-[#181114] dark:text-white">Traditional Green Silk
-                        </h3>
-                        <p class="mt-1 text-sm font-bold text-primary">$145.00</p>
-                    </div>
-                </div>
-                <div class="group flex flex-col gap-3">
-                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
-                        <div class="h-full w-full bg-cover bg-center" data-alt="Modern black saree with silver motifs"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhzrh93g09l13VNzi7qizpCaSbr1eUjifmgj0siIXgUKF_1EuPau3y5pDu6JeXnZfxZ6ouXKCy-qeUvSjpQqD13XQsaNV9YIABlS52dSqK2kY8f8UPHNiBB5neEVGUjFsWdJiSbMgUGPySLkyqZOFcmPjj1Sppbd6Op7neHwSyqG1gUlV2gbFGym3hhRhgfQseNPsv9UpHFRu4QRVmquZ-YILB_18Nmwz65ABOE7MnzaYbRz9jSxIqEiX2kpjqHR5j2XJ8cBqmjz8l');">
-                        </div>
-                        <button
-                            class="absolute bottom-3 right-3 flex size-10 translate-y-4 items-center justify-center rounded-full bg-white text-primary shadow-lg opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:bg-background-dark dark:text-white">
-                            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
-                        </button>
-                        <div
-                            class="absolute left-3 top-3 rounded bg-primary px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-                            -20%</div>
-                    </div>
-                    <div>
-                        <h3 class="truncate text-sm font-medium text-[#181114] dark:text-white">Midnight Black Georgette
-                        </h3>
-                        <div class="mt-1 flex gap-2">
-                            <p class="text-sm font-bold text-primary">$88.00</p>
-                            <p class="text-sm text-gray-400 line-through">$110.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="group hidden flex-col gap-3 sm:flex lg:hidden xl:flex">
-                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
-                        <div class="h-full w-full bg-cover bg-center" data-alt="Bright yellow festive saree"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7NbE69npOwmKnXhrtzlXtVlrNtHmH-fswCEYUuEzlLoVIcDZNnWlNmoBsmfdbWen6q5wjsVsJtDsITKqAT7LL0EwIC0gVeXLxs23QqXafWnWXsVNuB-iEPVUece0U8zvonXzA_ADu9bs4s__ZheORySKWu7sFV3qGvSc9rZqYJObl9JLtKG7vARHJQ-kHmpwc7c04_CBu5XUGrk1QEngUaoCJMjbHmtrNqqIaVnvbfsnv5UuJmtKRVzfbYQUlJkc-JxPtPhQVrWnG');">
-                        </div>
-                        <button
-                            class="absolute bottom-3 right-3 flex size-10 translate-y-4 items-center justify-center rounded-full bg-white text-primary shadow-lg opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:bg-background-dark dark:text-white">
-                            <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
-                        </button>
-                    </div>
-                    <div>
-                        <h3 class="truncate text-sm font-medium text-[#181114] dark:text-white">Sunshine Yellow Weave
-                        </h3>
-                        <p class="mt-1 text-sm font-bold text-primary">$130.00</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 flex justify-center">
-                <button
-                    class="rounded-lg border border-gray-200 bg-transparent px-6 py-2.5 text-sm font-bold text-[#181114] transition-colors hover:bg-gray-50 dark:border-white/10 dark:text-white dark:hover:bg-white/5">
-                    View All New Arrivals
-                </button>
-            </div>
-        </div>
-        <div class="mt-12 w-full bg-[#f4f0f2] py-16 dark:bg-white/5">
-            <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
-                <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                    <div class="flex flex-col items-center text-center">
-                        <div
-                            class="mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                            <span class="material-symbols-outlined text-2xl">verified</span>
-                        </div>
-                        <h3 class="mb-2 text-lg font-bold text-[#181114] dark:text-white">Authentic Quality</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Certified silk mark ensuring 100% pure silk
-                            and authentic handloom.</p>
-                    </div>
-                    <div class="flex flex-col items-center text-center">
-                        <div
-                            class="mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                            <span class="material-symbols-outlined text-2xl">local_shipping</span>
-                        </div>
-                        <h3 class="mb-2 text-lg font-bold text-[#181114] dark:text-white">Free Shipping</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Complimentary shipping on all domestic
-                            orders above $50.</p>
-                    </div>
-                    <div class="flex flex-col items-center text-center">
-                        <div
-                            class="mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                            <span class="material-symbols-outlined text-2xl">published_with_changes</span>
-                        </div>
-                        <h3 class="mb-2 text-lg font-bold text-[#181114] dark:text-white">Easy Returns</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">7-day hassle-free return policy for peace of
-                            mind.</p>
-                    </div>
-                    <div class="flex flex-col items-center text-center">
-                        <div
-                            class="mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                            <span class="material-symbols-outlined text-2xl">support_agent</span>
-                        </div>
-                        <h3 class="mb-2 text-lg font-bold text-[#181114] dark:text-white">24/7 Support</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Dedicated customer support to assist you
-                            anytime.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer class="w-full bg-white pb-8 pt-16 text-[#181114] dark:bg-background-dark dark:text-gray-300">
-            <div class="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
-                <div class="grid gap-12 lg:grid-cols-4">
-                    <div class="flex flex-col gap-4">
-                        <div class="flex items-center gap-2">
-                            <div class="flex size-6 items-center justify-center rounded bg-primary text-white">
-                                <span class="material-symbols-outlined text-sm">filter_vintage</span>
+        <div class="bg-background-light w-full">
+            <div class="bg-white shadow-sm border-b border-gray-200 overflow-x-auto hide-scrollbar">
+                <div class="layout-container flex justify-center w-full">
+                    <div
+                        class="flex w-full max-w-[1280px] px-2 md:px-6 py-3 min-w-max gap-6 md:gap-10 justify-between md:justify-start">
+                        <a class="flex flex-col items-center gap-1 group cursor-pointer" href="#">
+                            <div class="size-10 md:size-12 overflow-hidden rounded-md">
+                                <div class="w-full h-full bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZWmAUVa0zMl9_7_Q0quO7vdnDjygRC1ouO31OoEgpDV2FjK2YFFS-xOERWcggUhfLVrmP3EOz7cEznOIePTqrMWeZWv4qRLLEFmEo1jS3PeLZO3UE0heIAwDN1cEfJfiuOlUisguc-kylue3rg3RiZBSFm08-pmlDkvVnYFrRUyybSV2B5qg-AyDsda52HA3RnInkaRiWjD8jQMOwcuL1ZOR33S9oZABze8teWO_RrzFh5MsdA1piXOqP5H0ARWevIk4fwOIooA");'>
+                                </div>
                             </div>
-                            <h2 class="text-lg font-bold text-[#181114] dark:text-white">Oveera</h2>
-                        </div>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                            Bringing the legacy of Indian handlooms to the modern world. Every saree tells a story.
-                        </p>
-                        <div class="flex gap-4">
-                            <a class="text-gray-400 hover:text-primary" href="#"><span
-                                    class="material-symbols-outlined">public</span></a>
-                            <a class="text-gray-400 hover:text-primary" href="#"><span
-                                    class="material-symbols-outlined">photo_camera</span></a>
-                            <a class="text-gray-400 hover:text-primary" href="#"><span
-                                    class="material-symbols-outlined">send</span></a>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="mb-4 text-sm font-bold uppercase tracking-wider text-[#181114] dark:text-white">Shop
-                        </h3>
-                        <ul class="flex flex-col gap-2 text-sm">
-                            <li><a class="hover:text-primary hover:underline" href="#">All Sarees</a></li>
-                            <li><a class="hover:text-primary hover:underline" href="#">New Arrivals</a></li>
-                            <li><a class="hover:text-primary hover:underline" href="#">Best Sellers</a></li>
-                            <li><a class="hover:text-primary hover:underline" href="#">Sale</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="mb-4 text-sm font-bold uppercase tracking-wider text-[#181114] dark:text-white">
-                            Company</h3>
-                        <ul class="flex flex-col gap-2 text-sm">
-                            <li><a class="hover:text-primary hover:underline" href="#">About Us</a></li>
-                            <li><a class="hover:text-primary hover:underline" href="#">Contact</a></li>
-                            <li><a class="hover:text-primary hover:underline" href="#">FAQ</a></li>
-                            <li><a class="hover:text-primary hover:underline" href="#">Terms &amp; Conditions</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="mb-4 text-sm font-bold uppercase tracking-wider text-[#181114] dark:text-white">Stay
-                            Updated</h3>
-                        <p class="mb-4 text-sm text-gray-500 dark:text-gray-400">Subscribe to get special offers and
-                            updates.</p>
-                        <form class="flex flex-col gap-2 sm:flex-row lg:flex-col xl:flex-row">
-                            <input
-                                class="flex-1 rounded-lg border border-gray-300 bg-transparent px-4 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:border-gray-700"
-                                placeholder="Enter your email" type="email" />
-                            <button
-                                class="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-primary/90">
-                                Subscribe
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <div
-                    class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-100 pt-8 text-sm text-gray-500 dark:border-gray-800 sm:flex-row">
-                    <p>© 2024 Oveera Collections. All rights reserved.</p>
-                    <div class="flex gap-6">
-                        <a class="hover:text-primary" href="#">Privacy Policy</a>
-                        <a class="hover:text-primary" href="#">Terms of Service</a>
+                            <span class="text-xs md:text-sm font-medium text-text-main group-hover:text-primary">Top
+                                Offers</span>
+                        </a>
+                        <a class="flex flex-col items-center gap-1 group cursor-pointer" href="#">
+                            <div class="size-10 md:size-12 overflow-hidden rounded-md">
+                                <div class="w-full h-full bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC48MW97LT6dyYeQa68jTqROVyO3ys4z8R0P9eZNURrjrnF5jgiEIyHgjtzZ9cPtnoWqvkh2SfhoEXmNhZprHJBO9G4k0DZZlxV_fzOZ_EXm-VEsWDd_ooln6OgLBQf6qX_cADFxIA5SWmqaVKHmJlYSXtwMKOrkMWsgXXDoecO2ROz0lH8ZqI7f8riS6WCTRvGKBG9fzeUOVBY_zMnj8wkZCWo_TiBf1O9TjO68vmTjQCHbeZ-syaGdHjIjR9VG_IB-wevt9KOyg");'>
+                                </div>
+                            </div>
+                            <span
+                                class="text-xs md:text-sm font-medium text-text-main group-hover:text-primary">Mobiles</span>
+                        </a>
+                        <a class="flex flex-col items-center gap-1 group cursor-pointer" href="#">
+                            <div class="size-10 md:size-12 overflow-hidden rounded-md">
+                                <div class="w-full h-full bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjJrYBqi7DHYxIpUM_HrnWhHmMt1dsl65kIKQHwq3tR-mA_A9a1GpIdrEZsqjses1vgabCKazIxRflX-DHFFo1eRGfOy-O1tEEWvrjTAmtdZcWSrw9iB1RL5Tzasi5dcDUsNngv2a_f2_-aY7zgegaDvmkycrOuEhxVRQiiQ7JVctoKs43Z229g7Xf0t2PYNsFoScXhUFmSZ36ahFO6P5bLqL0g702ngBhAA0AIsqOzKeYv_Q43JjN4vOVwlx6M-7tLBMusaxsLA");'>
+                                </div>
+                            </div>
+                            <span
+                                class="text-xs md:text-sm font-medium text-text-main group-hover:text-primary">Fashion</span>
+                        </a>
+                        <a class="flex flex-col items-center gap-1 group cursor-pointer" href="#">
+                            <div class="size-10 md:size-12 overflow-hidden rounded-md">
+                                <div class="w-full h-full bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcEhyK2tTgNpTXqKzpDTGtGPDpMpf-f3Pm43Oy1Jr8Ro9r-xDCTI9Gt7cnC1GfDKl7KnYD4HelmUQ9RdOmESiNGCyzBkvvXhjHrKPsOaaBFOgXHbf0L9WgRLG-bbKjsLPG48OlneR22SKKNp_SIUrjByb6kZkdvL9nNwjQp_m9xXBVgmOwYcrffHMfzHmJmXwG9eDk4T-2-OQgvE3vr5th_VRLbDL5wP9zS8kEtrZtzy8jG4EG9ZamcWDKmq71_Y11-UQv_3zh0A");'>
+                                </div>
+                            </div>
+                            <span
+                                class="text-xs md:text-sm font-medium text-text-main group-hover:text-primary">Electronics</span>
+                        </a>
+                        <a class="flex flex-col items-center gap-1 group cursor-pointer" href="#">
+                            <div class="size-10 md:size-12 overflow-hidden rounded-md">
+                                <div class="w-full h-full bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1lLhDxsrCBivtiD8jx3vf65VsbbJeuJWJkO7P9OJuXlFdDkzRIXL5nxNVlXS6XXEtEbH5UNGdQhPbL52XkJv72QMvHvrLgZLtwB-xvAsFH5BopsbEQJ7Xlby_uvZ46FX-qceJ_m9SOg3KJwQ9iQ2Atwg8L6wT7mErbCAue8p23KBXDELTb68qTeJloHYWbxLo3V_uu_wG8o9XUq3bfkJsyw04eKUzvWuPleCC9s3ZU5pxLgATA_NClaqnE4vpT-h9S5zh_hrW3w");'>
+                                </div>
+                            </div>
+                            <span
+                                class="text-xs md:text-sm font-medium text-text-main group-hover:text-primary">Home</span>
+                        </a>
+                        <a class="flex flex-col items-center gap-1 group cursor-pointer" href="#">
+                            <div class="size-10 md:size-12 overflow-hidden rounded-md">
+                                <div class="w-full h-full bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzGVC7m2ur0JPoQ9gYiWuqr7ctUS93gD26mpnmcQFHPCvlM39FkZNSYuZTondXVi8reH5WNSJoifpxGA4W8rp2HMazrAOUeRf7kIG8UIQAHhNndL-nLg6DCjXa-vdedgC7jc_NIbP5vxIwzbeckxiHZd-fNrPuHjpv5Ab5hhDxQKkCV3SWtvMVamoU7RuxQakqWNN6uR8jxgiApkILPqxa_mun-qeTkrG6_emueiqetMp3DHtxgxMNRV7iuZmVIix3gls13C9aeg");'>
+                                </div>
+                            </div>
+                            <span
+                                class="text-xs md:text-sm font-medium text-text-main group-hover:text-primary">Appliances</span>
+                        </a>
                     </div>
                 </div>
             </div>
-        </footer>
+            <div class="layout-container flex justify-center w-full py-3">
+                <div class="flex w-full max-w-[1280px] flex-col px-2 md:px-4">
+                    <div class="@container relative w-full overflow-hidden shadow-sm bg-white md:rounded-sm">
+                        <div class="flex flex-col-reverse md:flex-row items-center w-full bg-white">
+                            <div class="flex flex-col justify-center p-6 md:p-12 md:w-1/2 text-left z-10">
+                                <span class="text-primary font-bold tracking-wide uppercase text-xs mb-2">Big Saving
+                                    Days</span>
+                                <h1
+                                    class="text-text-main text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-4">
+                                    Traditional Elegance<br /><span class="font-bold text-primary">Modern Blue
+                                        Hues</span>
+                                </h1>
+                                <p class="text-text-muted text-base mb-8 max-w-md">
+                                    Grab the best deals on our premium silk collection. Starts from <span
+                                        class="text-text-main font-bold">₹999</span>.
+                                </p>
+                                <button
+                                    class="w-max px-8 py-3 bg-primary hover:bg-blue-600 text-white text-base font-semibold rounded-sm shadow-md transition-all">
+                                    Shop Now
+                                </button>
+                            </div>
+                            <div class="w-full md:w-1/2 relative h-64 md:h-[400px]">
+                                <div class="absolute inset-0 bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMIDgrxdwRFKCeIAR9zv5y79vZfSmtJ9wKOdQ_Q3akEq8Sq_wNkiX7gNxbKrS_4c-xYIe0Mbn5eYnbn9Lv6JuUMMl-3-ISooueJfuQMhbQQFx7YXJkiJeU-yvVQv6kVMpj7gIP7k32-SIAtlyOGpbTEhMuUNEK7je-SNaoNswB7Okn9zadsdjIXKjFwKmIG1bwlM6mT7QBwS2pwwusbKUV52RzFZ8j14Ymj_gL71sCfSj5eyLWHQVkKCT2AlvBB2zK4ukIudl1GQ");'>
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent md:via-white/50">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                            <div class="w-2 h-2 rounded-full bg-primary cursor-pointer"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-300 cursor-pointer"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-300 cursor-pointer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layout-container flex justify-center w-full pb-4">
+                <div class="flex w-full max-w-[1280px] flex-col px-2 md:px-4">
+                    <div
+                        class="w-full bg-white p-4 shadow-sm rounded-sm mb-4 flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-gray-100 p-2 rounded-full"><span
+                                    class="material-symbols-outlined text-primary">account_balance</span></div>
+                            <div>
+                                <p class="font-bold text-text-main text-sm md:text-base">Extra ₹500 Off on SBI Credit
+                                    Cards</p>
+                                <p class="text-xs text-text-muted">Min purchase value ₹5000</p>
+                            </div>
+                        </div>
+                        <a class="text-primary text-sm font-semibold hover:underline" href="#">View T&amp;C</a>
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex flex-col md:flex-row w-full h-auto">
+                        <div class="w-full md:w-1/5 md:pr-4 mb-6 md:mb-0 flex md:flex-col justify-between md:justify-center items-center md:items-start text-center md:text-left bg-no-repeat bg-bottom"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJ_V2PuQewSv0M3pHerkcbR6B_HXfU6NuBjvX2bgSyppPiYWy3y67EGIvwGdNVSIZdjyCrUsZT8vhyLz7vIUhvwanC_U4xHjJ2UD25GsTmmErCe20KbCHna2aZ6KrHcdDuYlH5R1BdAXqqFg-uWuN2LCxoi0SdDgpLRhGETYbpZwzLQBXGpACL2Sz6WQX6M_Qo-T1JaiuRNgV_2Hslo2BDsNrHXYf-UeQTj_TQlI7bW-PQXWmLWHQwTYqXx6ovjZ6cmTf0FJPRbA'); background-size: contain;">
+                            <div class="flex flex-col items-center md:items-start w-full">
+                                <h2 class="text-xl md:text-3xl font-medium text-text-main mb-2">Best of<br />Sarees</h2>
+                                <a class="bg-primary text-white text-sm font-medium px-5 py-2 rounded-sm shadow-md hover:shadow-lg transition-shadow inline-block mt-4"
+                                    href="#">
+                                    VIEW ALL
+                                </a>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-4/5 overflow-x-auto hide-scrollbar pb-2">
+                            <div class="flex gap-4 md:gap-6 min-w-max">
+                                <a class="flex flex-col gap-2 w-40 md:w-48 group cursor-pointer border border-transparent hover:border-gray-100 p-2 rounded-sm transition-all"
+                                    href="#">
+                                    <div class="w-full aspect-[3/4] rounded-sm overflow-hidden relative bg-gray-50">
+                                        <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZWmAUVa0zMl9_7_Q0quO7vdnDjygRC1ouO31OoEgpDV2FjK2YFFS-xOERWcggUhfLVrmP3EOz7cEznOIePTqrMWeZWv4qRLLEFmEo1jS3PeLZO3UE0heIAwDN1cEfJfiuOlUisguc-kylue3rg3RiZBSFm08-pmlDkvVnYFrRUyybSV2B5qg-AyDsda52HA3RnInkaRiWjD8jQMOwcuL1ZOR33S9oZABze8teWO_RrzFh5MsdA1piXOqP5H0ARWevIk4fwOIooA");'>
+                                        </div>
+                                        <button
+                                            class="absolute top-2 right-2 size-7 flex items-center justify-center rounded-full bg-white/90 text-gray-300 hover:text-red-500 shadow-sm transition-colors">
+                                            <span
+                                                class="material-symbols-outlined text-[16px] fill-current">favorite</span>
+                                        </button>
+                                    </div>
+                                    <div class="flex flex-col items-center text-center mt-2">
+                                        <h3 class="font-medium text-sm text-text-main truncate w-full">Ivory Gold Silk
+                                        </h3>
+                                        <p class="text-green-600 text-sm font-medium mt-1">Min. 50% Off</p>
+                                        <p class="text-text-muted text-xs">Kanjivaram Special</p>
+                                    </div>
+                                </a>
+                                <a class="flex flex-col gap-2 w-40 md:w-48 group cursor-pointer border border-transparent hover:border-gray-100 p-2 rounded-sm transition-all"
+                                    href="#">
+                                    <div class="w-full aspect-[3/4] rounded-sm overflow-hidden relative bg-gray-50">
+                                        <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC48MW97LT6dyYeQa68jTqROVyO3ys4z8R0P9eZNURrjrnF5jgiEIyHgjtzZ9cPtnoWqvkh2SfhoEXmNhZprHJBO9G4k0DZZlxV_fzOZ_EXm-VEsWDd_ooln6OgLBQf6qX_cADFxIA5SWmqaVKHmJlYSXtwMKOrkMWsgXXDoecO2ROz0lH8ZqI7f8riS6WCTRvGKBG9fzeUOVBY_zMnj8wkZCWo_TiBf1O9TjO68vmTjQCHbeZ-syaGdHjIjR9VG_IB-wevt9KOyg");'>
+                                        </div>
+                                        <button
+                                            class="absolute top-2 right-2 size-7 flex items-center justify-center rounded-full bg-white/90 text-gray-300 hover:text-red-500 shadow-sm transition-colors">
+                                            <span
+                                                class="material-symbols-outlined text-[16px] fill-current">favorite</span>
+                                        </button>
+                                    </div>
+                                    <div class="flex flex-col items-center text-center mt-2">
+                                        <h3 class="font-medium text-sm text-text-main truncate w-full">Midnight Blue
+                                            Zari</h3>
+                                        <p class="text-green-600 text-sm font-medium mt-1">Shop Now!</p>
+                                        <p class="text-text-muted text-xs">Banarasi Silk</p>
+                                    </div>
+                                </a>
+                                <a class="flex flex-col gap-2 w-40 md:w-48 group cursor-pointer border border-transparent hover:border-gray-100 p-2 rounded-sm transition-all"
+                                    href="#">
+                                    <div class="w-full aspect-[3/4] rounded-sm overflow-hidden relative bg-gray-50">
+                                        <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjJrYBqi7DHYxIpUM_HrnWhHmMt1dsl65kIKQHwq3tR-mA_A9a1GpIdrEZsqjses1vgabCKazIxRflX-DHFFo1eRGfOy-O1tEEWvrjTAmtdZcWSrw9iB1RL5Tzasi5dcDUsNngv2a_f2_-aY7zgegaDvmkycrOuEhxVRQiiQ7JVctoKs43Z229g7Xf0t2PYNsFoScXhUFmSZ36ahFO6P5bLqL0g702ngBhAA0AIsqOzKeYv_Q43JjN4vOVwlx6M-7tLBMusaxsLA");'>
+                                        </div>
+                                        <button
+                                            class="absolute top-2 right-2 size-7 flex items-center justify-center rounded-full bg-white/90 text-gray-300 hover:text-red-500 shadow-sm transition-colors">
+                                            <span
+                                                class="material-symbols-outlined text-[16px] fill-current">favorite</span>
+                                        </button>
+                                    </div>
+                                    <div class="flex flex-col items-center text-center mt-2">
+                                        <h3 class="font-medium text-sm text-text-main truncate w-full">Blush Pink Floral
+                                        </h3>
+                                        <p class="text-green-600 text-sm font-medium mt-1">From ₹999</p>
+                                        <p class="text-text-muted text-xs">Georgette</p>
+                                    </div>
+                                </a>
+                                <a class="flex flex-col gap-2 w-40 md:w-48 group cursor-pointer border border-transparent hover:border-gray-100 p-2 rounded-sm transition-all"
+                                    href="#">
+                                    <div class="w-full aspect-[3/4] rounded-sm overflow-hidden relative bg-gray-50">
+                                        <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1lLhDxsrCBivtiD8jx3vf65VsbbJeuJWJkO7P9OJuXlFdDkzRIXL5nxNVlXS6XXEtEbH5UNGdQhPbL52XkJv72QMvHvrLgZLtwB-xvAsFH5BopsbEQJ7Xlby_uvZ46FX-qceJ_m9SOg3KJwQ9iQ2Atwg8L6wT7mErbCAue8p23KBXDELTb68qTeJloHYWbxLo3V_uu_wG8o9XUq3bfkJsyw04eKUzvWuPleCC9s3ZU5pxLgATA_NClaqnE4vpT-h9S5zh_hrW3w");'>
+                                        </div>
+                                        <button
+                                            class="absolute top-2 right-2 size-7 flex items-center justify-center rounded-full bg-white/90 text-gray-300 hover:text-red-500 shadow-sm transition-colors">
+                                            <span
+                                                class="material-symbols-outlined text-[16px] fill-current">favorite</span>
+                                        </button>
+                                    </div>
+                                    <div class="flex flex-col items-center text-center mt-2">
+                                        <h3 class="font-medium text-sm text-text-main truncate w-full">Emerald Heritage
+                                        </h3>
+                                        <p class="text-green-600 text-sm font-medium mt-1">Grab Now</p>
+                                        <p class="text-text-muted text-xs">Cotton Silk</p>
+                                    </div>
+                                </a>
+                                <a class="flex flex-col gap-2 w-40 md:w-48 group cursor-pointer border border-transparent hover:border-gray-100 p-2 rounded-sm transition-all"
+                                    href="#">
+                                    <div class="w-full aspect-[3/4] rounded-sm overflow-hidden relative bg-gray-50">
+                                        <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCH2LeY2VgOuJcsvKKbQTwAUUmjwFMdma-EEXfCuceBZnouasv_QcfsCXXlgqtRAVO10amIDu2fpzul9542PZrV7w9GLvz6gD0LIRBR1If0fQA0UBJjb0yWh7ybK9zEMbt2_9djV18-mfgnP1h11mnJyYeByHDYs82jxL_oKok1GmSl-4D8xFClMKvrg0Gxh_PK5JDp_xHR01Y1zT8ZZQpk_AVJMYLk386s3NtH9556s_CHEAcWDhLGCSH53KzsHWfsGemakwa_wA");'>
+                                        </div>
+                                        <button
+                                            class="absolute top-2 right-2 size-7 flex items-center justify-center rounded-full bg-white/90 text-gray-300 hover:text-red-500 shadow-sm transition-colors">
+                                            <span
+                                                class="material-symbols-outlined text-[16px] fill-current">favorite</span>
+                                        </button>
+                                    </div>
+                                    <div class="flex flex-col items-center text-center mt-2">
+                                        <h3 class="font-medium text-sm text-text-main truncate w-full">Bridal Red</h3>
+                                        <p class="text-green-600 text-sm font-medium mt-1">Min. 30% Off</p>
+                                        <p class="text-text-muted text-xs">Wedding Collection</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-4">
+                        <div
+                            class="relative w-full aspect-[16/7] md:aspect-auto md:h-64 cursor-pointer overflow-hidden rounded-sm shadow-sm">
+                            <div class="w-full h-full bg-cover bg-center transition-transform hover:scale-105 duration-500"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVy87iEEZadm-DjHv5k-R8RkZDlu5IyHQGFsJGVYhIjZsvSh4AkWFGCkkKgNK2QkCq4fC2oJjAOzGDnQCS99UE1uLp-te57pD55nKSJMd7vFYccoAiq4km7uRRnxmPwLiRJabTV246mIc0Dew1_Uh7gLk87wBBY1eaSf6-6-4YeZ8Q_FOW0q3jd3gkbdvpdJR-ub8PscstUT9jac9FzsP7S4Ggpu9EWE4yQTQ6tNBLqGHXsogBOFLiyGqd2KhRB-TADjvPS5pkkg");'>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                                <h3 class="text-white font-bold text-xl">Designer Picks</h3>
+                            </div>
+                        </div>
+                        <div
+                            class="relative w-full aspect-[16/7] md:aspect-auto md:h-64 cursor-pointer overflow-hidden rounded-sm shadow-sm">
+                            <div class="w-full h-full bg-cover bg-center transition-transform hover:scale-105 duration-500"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLlSxMcZGtG6LOwHN6uui9GrP0MYmUwf0igUyTFFHEoDObVzr0nPME5XXMsmeN6MJM3jiUW99WVuqZwtXlhDCZPMSyPxT5A512TXNzJx8yIdOidBeLq1pNUb76SL0xQ_uBlfFQ2PF2JNsYJESlS9-AyGIiUz6sfdtFd1P4pldh-WWu65k9WndLCCaeDS73c8MY3WDdtzVvu-9eJJXxveuash1bhECviuyWsoZnkuKDXHah86a6zvnjMqpEAQGAFkBE-loN1hFnpQ");'>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                                <h3 class="text-white font-bold text-xl">Summer Pastels</h3>
+                            </div>
+                        </div>
+                        <div
+                            class="relative w-full aspect-[16/7] md:aspect-auto md:h-64 cursor-pointer overflow-hidden rounded-sm shadow-sm">
+                            <div class="w-full h-full bg-cover bg-center transition-transform hover:scale-105 duration-500"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzGVC7m2ur0JPoQ9gYiWuqr7ctUS93gD26mpnmcQFHPCvlM39FkZNSYuZTondXVi8reH5WNSJoifpxGA4W8rp2HMazrAOUeRf7kIG8UIQAHhNndL-nLg6DCjXa-vdedgC7jc_NIbP5vxIwzbeckxiHZd-fNrPuHjpv5Ab5hhDxQKkCV3SWtvMVamoU7RuxQakqWNN6uR8jxgiApkILPqxa_mun-qeTkrG6_emueiqetMp3DHtxgxMNRV7iuZmVIix3gls13C9aeg");'>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                                <h3 class="text-white font-bold text-xl">Cotton Comfort</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm mt-4">
+                        <div class="flex justify-between items-center border-b border-gray-100 pb-4 mb-4">
+                            <h2 class="text-xl md:text-2xl font-semibold text-text-main">Featured Collection</h2>
+                            <a class="bg-primary text-white text-sm font-medium px-4 py-2 rounded-sm shadow-sm hover:shadow-md"
+                                href="#">VIEW ALL</a>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                            <div
+                                class="group flex flex-col hover:shadow-lg transition-shadow duration-300 rounded-sm bg-white p-3 border border-gray-100">
+                                <div class="relative aspect-[3/4] w-full bg-gray-50 overflow-hidden mb-2 rounded-sm">
+                                    <div class="bg-cover bg-center h-full w-full group-hover:scale-105 transition-transform duration-500"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZWmAUVa0zMl9_7_Q0quO7vdnDjygRC1ouO31OoEgpDV2FjK2YFFS-xOERWcggUhfLVrmP3EOz7cEznOIePTqrMWeZWv4qRLLEFmEo1jS3PeLZO3UE0heIAwDN1cEfJfiuOlUisguc-kylue3rg3RiZBSFm08-pmlDkvVnYFrRUyybSV2B5qg-AyDsda52HA3RnInkaRiWjD8jQMOwcuL1ZOR33S9oZABze8teWO_RrzFh5MsdA1piXOqP5H0ARWevIk4fwOIooA");'>
+                                    </div>
+                                    <button
+                                        class="absolute top-2 right-2 size-8 flex items-center justify-center rounded-full bg-white/90 text-gray-300 hover:text-red-500 shadow-sm z-10">
+                                        <span class="material-symbols-outlined text-[18px] fill-current">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <div class="text-text-muted text-xs">Kanjivaram</div>
+                                    <h3 class="font-medium text-sm text-text-main leading-tight truncate">Ivory Gold
+                                        Silk Saree</h3>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span
+                                            class="bg-green-700 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                            4.8 <span
+                                                class="material-symbols-outlined text-[10px] fill-current">star</span>
+                                        </span>
+                                        <span class="text-text-muted text-xs">(1,240)</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-lg font-bold text-text-main">₹1,450</span>
+                                        <span class="text-sm text-text-muted line-through">₹2,999</span>
+                                        <span class="text-xs font-bold text-green-700">51% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex flex-col hover:shadow-lg transition-shadow duration-300 rounded-sm bg-white p-3 border border-gray-100">
+                                <div class="relative aspect-[3/4] w-full bg-gray-50 overflow-hidden mb-2 rounded-sm">
+                                    <div class="bg-cover bg-center h-full w-full group-hover:scale-105 transition-transform duration-500"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC48MW97LT6dyYeQa68jTqROVyO3ys4z8R0P9eZNURrjrnF5jgiEIyHgjtzZ9cPtnoWqvkh2SfhoEXmNhZprHJBO9G4k0DZZlxV_fzOZ_EXm-VEsWDd_ooln6OgLBQf6qX_cADFxIA5SWmqaVKHmJlYSXtwMKOrkMWsgXXDoecO2ROz0lH8ZqI7f8riS6WCTRvGKBG9fzeUOVBY_zMnj8wkZCWo_TiBf1O9TjO68vmTjQCHbeZ-syaGdHjIjR9VG_IB-wevt9KOyg");'>
+                                    </div>
+                                    <button
+                                        class="absolute top-2 right-2 size-8 flex items-center justify-center rounded-full bg-white/90 text-gray-300 hover:text-red-500 shadow-sm z-10">
+                                        <span class="material-symbols-outlined text-[18px] fill-current">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <div class="text-text-muted text-xs">Banarasi</div>
+                                    <h3 class="font-medium text-sm text-text-main leading-tight truncate">Midnight Blue
+                                        Zari</h3>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span
+                                            class="bg-green-700 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                            4.9 <span
+                                                class="material-symbols-outlined text-[10px] fill-current">star</span>
+                                        </span>
+                                        <span class="text-text-muted text-xs">(856)</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-lg font-bold text-text-main">₹1,890</span>
+                                        <span class="text-sm text-text-muted line-through">₹3,500</span>
+                                        <span class="text-xs font-bold text-green-700">46% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex flex-col hover:shadow-lg transition-shadow duration-300 rounded-sm bg-white p-3 border border-gray-100">
+                                <div class="relative aspect-[3/4] w-full bg-gray-50 overflow-hidden mb-2 rounded-sm">
+                                    <div class="bg-cover bg-center h-full w-full group-hover:scale-105 transition-transform duration-500"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjJrYBqi7DHYxIpUM_HrnWhHmMt1dsl65kIKQHwq3tR-mA_A9a1GpIdrEZsqjses1vgabCKazIxRflX-DHFFo1eRGfOy-O1tEEWvrjTAmtdZcWSrw9iB1RL5Tzasi5dcDUsNngv2a_f2_-aY7zgegaDvmkycrOuEhxVRQiiQ7JVctoKs43Z229g7Xf0t2PYNsFoScXhUFmSZ36ahFO6P5bLqL0g702ngBhAA0AIsqOzKeYv_Q43JjN4vOVwlx6M-7tLBMusaxsLA");'>
+                                    </div>
+                                    <button
+                                        class="absolute top-2 right-2 size-8 flex items-center justify-center rounded-full bg-white/90 text-gray-300 hover:text-red-500 shadow-sm z-10">
+                                        <span class="material-symbols-outlined text-[18px] fill-current">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <div class="text-text-muted text-xs">Georgette</div>
+                                    <h3 class="font-medium text-sm text-text-main leading-tight truncate">Blush Pink
+                                        Floral</h3>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span
+                                            class="bg-green-700 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                            4.5 <span
+                                                class="material-symbols-outlined text-[10px] fill-current">star</span>
+                                        </span>
+                                        <span class="text-text-muted text-xs">(2,100)</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-lg font-bold text-text-main">₹950</span>
+                                        <span class="text-sm text-text-muted line-through">₹1,999</span>
+                                        <span class="text-xs font-bold text-green-700">52% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex flex-col hover:shadow-lg transition-shadow duration-300 rounded-sm bg-white p-3 border border-gray-100">
+                                <div class="relative aspect-[3/4] w-full bg-gray-50 overflow-hidden mb-2 rounded-sm">
+                                    <div class="bg-cover bg-center h-full w-full group-hover:scale-105 transition-transform duration-500"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1lLhDxsrCBivtiD8jx3vf65VsbbJeuJWJkO7P9OJuXlFdDkzRIXL5nxNVlXS6XXEtEbH5UNGdQhPbL52XkJv72QMvHvrLgZLtwB-xvAsFH5BopsbEQJ7Xlby_uvZ46FX-qceJ_m9SOg3KJwQ9iQ2Atwg8L6wT7mErbCAue8p23KBXDELTb68qTeJloHYWbxLo3V_uu_wG8o9XUq3bfkJsyw04eKUzvWuPleCC9s3ZU5pxLgATA_NClaqnE4vpT-h9S5zh_hrW3w");'>
+                                    </div>
+                                    <button
+                                        class="absolute top-2 right-2 size-8 flex items-center justify-center rounded-full bg-white/90 text-gray-300 hover:text-red-500 shadow-sm z-10">
+                                        <span class="material-symbols-outlined text-[18px] fill-current">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <div class="text-text-muted text-xs">Cotton Silk</div>
+                                    <h3 class="font-medium text-sm text-text-main leading-tight truncate">Emerald
+                                        Heritage</h3>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span
+                                            class="bg-green-700 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                                            4.7 <span
+                                                class="material-symbols-outlined text-[10px] fill-current">star</span>
+                                        </span>
+                                        <span class="text-text-muted text-xs">(542)</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-lg font-bold text-text-main">₹750</span>
+                                        <span class="text-sm text-text-muted line-through">₹1,499</span>
+                                        <span class="text-xs font-bold text-green-700">50% off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-background-dark text-white pt-12 pb-6 border-t border-gray-700 mt-8">
+                <div class="layout-container flex justify-center w-full">
+                    <div class="flex w-full max-w-[1280px] flex-col px-4 md:px-12">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 text-[12px] md:text-xs">
+                            <div>
+                                <h4 class="font-normal mb-3 text-gray-400 uppercase tracking-wide">About</h4>
+                                <ul class="flex flex-col gap-1.5 text-white font-medium">
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">Contact
+                                            Us</a></li>
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">About Us</a>
+                                    </li>
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">Careers</a>
+                                    </li>
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">Saree Haven
+                                            Stories</a></li>
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">Press</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-normal mb-3 text-gray-400 uppercase tracking-wide">Help</h4>
+                                <ul class="flex flex-col gap-1.5 text-white font-medium">
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">Payments</a>
+                                    </li>
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">Shipping</a>
+                                    </li>
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">Cancellation
+                                            &amp; Returns</a></li>
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">FAQ</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-normal mb-3 text-gray-400 uppercase tracking-wide">Policy</h4>
+                                <ul class="flex flex-col gap-1.5 text-white font-medium">
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">Return
+                                            Policy</a></li>
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">Terms of
+                                            Use</a></li>
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">Security</a>
+                                    </li>
+                                    <li><a class="hover:underline decoration-1 underline-offset-2" href="#">Privacy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="border-l border-gray-600 pl-0 md:pl-8 mt-4 md:mt-0">
+                                <h4 class="font-normal mb-3 text-gray-400 uppercase tracking-wide">Mail Us:</h4>
+                                <p class="text-white text-[12px] leading-relaxed mb-4">
+                                    Saree Haven Private Limited,<br />
+                                    Buildings Alyssa, Begonia &amp;<br />
+                                    Clove Embassy Tech Village,<br />
+                                    Outer Ring Road, Devarabeesanahalli Village,<br />
+                                    Bengaluru, 560103,<br />
+                                    Karnataka, India
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="border-t border-gray-600 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-secondary text-lg">storefront</span>
+                                <span class="font-medium">Become a Seller</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-secondary text-lg">stars</span>
+                                <span class="font-medium">Advertise</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-secondary text-lg">card_giftcard</span>
+                                <span class="font-medium">Gift Cards</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-secondary text-lg">help</span>
+                                <span class="font-medium">Help Center</span>
+                            </div>
+                            <p class="text-gray-400 mt-4 md:mt-0">© 2007-2023 SareeHaven.com</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </div>
 </body>
 
