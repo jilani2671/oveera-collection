@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>oveera collections - Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec136d",
+                        "primary-hover": "#d61062",
+                        "secondary": "#fcebf4",
+                        "secondary-dark": "#d61062",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#221018",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b24",
+                        "text-main": "#181114",
+                        "text-muted": "#6e5d60",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Enhanced Sidebar Animations */
+        .sidebar-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        #nav-toggle:checked~.sidebar-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-out;
+        }
+
+        #nav-toggle:checked~.sidebar {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-[#181114] dark:bg-background-dark dark:text-white font-display antialiased">
+    <input class="peer hidden" id="nav-toggle" type="checkbox" />
+    <label class="sidebar-overlay fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]" for="nav-toggle"></label>
+    <div
+        class="sidebar fixed top-0 left-0 h-full w-[280px] sm:w-[320px] bg-surface-light dark:bg-surface-dark z-[70] shadow-2xl border-r border-[#f4f0f2] dark:border-[#3a2e34] flex flex-col">
+        <div
+            class="flex items-center justify-between p-6 border-b border-[#f4f0f2] dark:border-[#3a2e34] bg-surface-light dark:bg-surface-dark">
+            <h2 class="text-xl font-bold text-primary flex items-center gap-2">
+                <img src="oveera_logo.jpg" alt="oveera logo" class="size-8 rounded-full object-cover" />
+                oveera collections
+            </h2>
+            <label
+                class="cursor-pointer p-2 rounded-full hover:bg-gray-100 text-text-muted hover:text-primary transition-colors"
+                for="nav-toggle">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </label>
+        </div>
+        <div class="sidebar-content flex-1 overflow-y-auto p-6 custom-scrollbar">
+            <div class="flex flex-col gap-1 mb-8">
+                <a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 text-text-main hover:text-primary font-medium transition-colors"
+                    href="index.html">
+                    <span class="material-symbols-outlined text-[20px]">home</span> Home
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 text-text-main hover:text-primary font-medium transition-colors"
+                    href="shop.html">
+                    <span class="material-symbols-outlined text-[20px]">storefront</span> Collection
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 text-text-main hover:text-primary font-medium transition-colors"
+                    href="about-us.html">
+                    <span class="material-symbols-outlined text-[20px]">verified</span> About Us
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/5 text-primary font-semibold"
+                    href="contact-us.html">
+                    <span class="material-symbols-outlined text-[20px]">mail</span> Contact
+                </a>
+            </div>
+            <div class="mb-8">
+                <h3 class="text-xs font-bold text-secondary-dark uppercase tracking-widest px-4 mb-3">Shop by Category
+                </h3>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center justify-between px-4 py-2.5 text-text-muted hover:text-primary hover:bg-gray-50 rounded-lg transition-colors text-sm"
+                        href="#">
+                        <span>Silk Sarees</span>
+                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </a>
+                    <a class="flex items-center justify-between px-4 py-2.5 text-text-muted hover:text-primary hover:bg-gray-50 rounded-lg transition-colors text-sm"
+                        href="#">
+                        <span>Cotton Weaves</span>
+                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </a>
+                    <a class="flex items-center justify-between px-4 py-2.5 text-text-muted hover:text-primary hover:bg-gray-50 rounded-lg transition-colors text-sm"
+                        href="#">
+                        <span>Wedding Collection</span>
+                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </a>
+                    <a class="flex items-center justify-between px-4 py-2.5 text-text-muted hover:text-primary hover:bg-gray-50 rounded-lg transition-colors text-sm"
+                        href="#">
+                        <span>Designer Wear</span>
+                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </a>
+                    <a class="flex items-center justify-between px-4 py-2.5 text-text-muted hover:text-primary hover:bg-gray-50 rounded-lg transition-colors text-sm"
+                        href="#">
+                        <span>Pastel Edit</span>
+                        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </a>
+                </div>
+            </div>
+            <div class="p-4 bg-gradient-to-br from-primary to-[#831843] rounded-2xl text-white text-center">
+                <p class="font-bold text-lg mb-1">New Arrivals</p>
+                <p class="text-white/80 text-xs mb-3">Check out the latest trends in ethnic fashion.</p>
+                <button
+                    class="w-full py-2 bg-white text-primary font-bold text-xs rounded-lg shadow-sm hover:bg-secondary hover:text-white transition-colors">Explore
+                    Now</button>
+            </div>
+        </div>
+        <div
+            class="p-4 border-t border-[#f4f0f2] dark:border-[#3a2e34] bg-surface-light dark:bg-surface-dark text-center text-xs text-text-muted">
+            © 2023 oveera collections
+        </div>
+    </div>
+    <div class="relative flex flex-col min-h-screen w-full overflow-x-hidden">
+        <header
+            class="sticky top-0 z-50 bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur-md border-b border-[#f4f0f2] dark:border-[#3a2e34] w-full shadow-sm">
+            <div class="layout-container flex justify-center w-full">
+                <div class="flex w-full max-w-[1280px] flex-col">
+                    <div class="flex items-center justify-between whitespace-nowrap px-4 md:px-10 py-3 h-16 md:h-20">
+                        <div class="flex items-center gap-2 md:gap-4 text-text-main">
+                            <label
+                                class="cursor-pointer mr-2 p-1 hover:text-primary transition-colors rounded-md active:scale-95"
+                                for="nav-toggle">
+                                <span class="material-symbols-outlined text-3xl">menu</span>
+                            </label>
+                            <div class="size-8">
+                                <img src="oveera_logo.jpg" alt="oveera logo"
+                                    class="w-full h-full rounded-full object-cover" />
+                            </div>
+                            <h2 class="text-text-main text-lg md:text-xl font-bold leading-tight tracking-[-0.015em]">
+                                oveera collections</h2>
+                        </div>
+                        <nav class="hidden md:flex items-center gap-9">
+                            <a class="text-text-main text-sm font-medium hover:text-primary transition-colors"
+                                href="index.html">Home</a>
+                            <a class="text-text-main text-sm font-medium hover:text-primary transition-colors"
+                                href="shop.html">Collection</a>
+                            <a class="text-text-main text-sm font-medium hover:text-primary transition-colors"
+                                href="about-us.html">About</a>
+                            <a class="text-primary text-sm font-medium" href="contact-us.html">Contact</a>
+                        </nav>
+                        <div class="flex items-center gap-4 md:gap-8">
+                            <label class="hidden lg:flex flex-col min-w-40 !h-10 max-w-64">
+                                <div
+                                    class="flex w-full flex-1 items-stretch rounded-xl h-full border border-gray-200 hover:border-primary transition-colors bg-white">
+                                    <div
+                                        class="text-primary flex items-center justify-center pl-4 rounded-l-xl border-r-0">
+                                        <span class="material-symbols-outlined text-[20px]">search</span>
+                                    </div>
+                                    <input
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-text-main dark:text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-text-muted/70 px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal"
+                                        placeholder="Search sarees..." value="" />
+                                </div>
+                            </label>
+                            <div class="flex gap-3">
+                                <button
+                                    class="lg:hidden flex size-10 cursor-pointer items-center justify-center rounded-xl bg-gray-100 text-text-main hover:bg-primary hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]">search</span>
+                                </button>
+
+                                <a href="add-to-cart.html">
+                                    <button
+                                        class="flex size-10 cursor-pointer items-center justify-center rounded-xl bg-gray-100 text-text-main hover:bg-primary hover:text-white transition-colors relative">
+                                        <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+                                        <span
+                                            class="absolute top-1.5 right-1.5 size-2.5 bg-primary rounded-full ring-2 ring-white"></span>
+                                    </button></a>
+                                <a href="login.html">
+                                    <button
+                                        class="flex size-10 cursor-pointer items-center justify-center rounded-xl bg-gray-100 text-text-main hover:bg-primary hover:text-white transition-colors">
+                                        <span class="material-symbols-outlined text-[20px]">person</span>
+                                    </button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
+            <div class="mb-10 text-center md:text-left">
+                <h1 class="text-text-main text-3xl md:text-5xl font-black leading-tight tracking-[-0.033em] mb-4">Get in
+                    Touch</h1>
+                <p class="text-text-muted text-base md:text-lg font-normal leading-relaxed max-w-2xl">
+                    We'd love to hear from you. Whether it's a question about a heritage weave, a custom bridal request,
+                    or
+                    an order update, our team is here to assist you.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-7 bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-border-soft">
+                    <form class="flex flex-col gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <label class="flex flex-col flex-1">
+                                <p class="text-text-main text-sm font-semibold leading-normal pb-2">Your Name</p>
+                                <input
+                                    class="form-input flex w-full flex-1 rounded-xl text-text-main focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-input-border bg-background-light h-12 px-4 text-base font-normal leading-normal transition-all"
+                                    placeholder="Jane Doe" type="text" />
+                            </label>
+                            <label class="flex flex-col flex-1">
+                                <p class="text-text-main text-sm font-semibold leading-normal pb-2">Email Address</p>
+                                <input
+                                    class="form-input flex w-full flex-1 rounded-xl text-text-main focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-input-border bg-background-light h-12 px-4 text-base font-normal leading-normal transition-all"
+                                    placeholder="jane@example.com" type="email" />
+                            </label>
+                        </div>
+                        <label class="flex flex-col flex-1">
+                            <p class="text-text-main text-sm font-semibold leading-normal pb-2">Order Number (Optional)
+                            </p>
+                            <input
+                                class="form-input flex w-full flex-1 rounded-xl text-text-main focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-input-border bg-background-light h-12 px-4 text-base font-normal leading-normal transition-all"
+                                placeholder="#12345" type="text" />
+                        </label>
+                        <label class="flex flex-col flex-1">
+                            <p class="text-text-main text-sm font-semibold leading-normal pb-2">Message</p>
+                            <textarea
+                                class="form-textarea flex w-full flex-1 resize-none rounded-xl text-text-main focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-input-border bg-background-light p-4 text-base font-normal leading-normal transition-all"
+                                placeholder="How can we help you today?" rows="5"></textarea>
+                        </label>
+                        <div class="pt-2">
+                            <button
+                                class="group w-full md:w-auto px-8 h-12 bg-secondary hover:bg-[#c9a22e] text-text-main font-bold text-sm uppercase tracking-wider rounded-xl transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2"
+                                type="button">
+                                <span>Send Message</span>
+                                <span
+                                    class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">send</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="lg:col-span-5 flex flex-col gap-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-border-soft flex flex-col gap-6">
+                        <div>
+                            <h3 class="text-text-main text-xl font-bold mb-4">Visit Our Studio</h3>
+                            <p class="text-text-muted text-sm leading-relaxed mb-6">
+                                Experience the elegance of handwoven silk in person. Our studio is open for visits by
+                                appointment.
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-5">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+                                    <span class="material-symbols-outlined">storefront</span>
+                                </div>
+                                <div>
+                                    <p class="text-text-main font-semibold text-sm">The Silk Studio</p>
+                                    <p class="text-text-muted text-sm">12 Banaras Lane, Haus Khas Village<br />New
+                                        Delhi,
+                                        110016</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+                                    <span class="material-symbols-outlined">mail</span>
+                                </div>
+                                <div>
+                                    <p class="text-text-main font-semibold text-sm">Email Us</p>
+                                    <a class="text-text-muted text-sm hover:text-primary transition-colors"
+                                        href="mailto:hello@sareestudio.com">hello@sareestudio.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+                                    <span class="material-symbols-outlined">call</span>
+                                </div>
+                                <div>
+                                    <p class="text-text-main font-semibold text-sm">Call Us</p>
+                                    <p class="text-text-muted text-sm">+91 98765 43210</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden shadow-sm border border-border-soft group cursor-pointer">
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Google map view of New Delhi location" data-location="New Delhi"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB7dOMBY0OhgtHheFDObUr0PSBdnF2XIX1R5LlrGRlU5T5nlrnRtxvrDEGLMOYv2BfZ8dThmOkj00rcAjp25O9JwTAn0gZj8oiG7ZTM6kI9WDK4hFSvFGKtkOjwVJVThIRfHpFlWwGqeWM1y_WmDE2AL-_VOBVkN4hLbRpirpz4L7OuCr5loE9roRbbG0gpG5QYuD0x6xVtOCLRcd5gYVrU3xbFQcFxF5F5rBpy899gMCPRpQh_lF-4HW941I34AwyFbGgHADy-UA'); filter: grayscale(10%) sepia(20%) opacity(90%);">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-light/50 to-transparent pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary drop-shadow-md animate-bounce">location_on</span>
+                            <span
+                                class="bg-white/95 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-md mt-1 text-primary">We
+                                are here</span>
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-md shadow-sm text-[10px] text-gray-500 font-medium">
+                            Google Maps
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <a aria-label="Chat on WhatsApp"
+            class="fixed bottom-6 right-6 z-50 flex items-center justify-center size-14 md:size-16 rounded-full bg-primary hover:bg-primary-hover shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 active:scale-95 group"
+            href="#">
+            <svg class="size-7 md:size-8 text-white fill-current" viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+                </path>
+            </svg>
+        </a>
+        <footer
+            class="bg-surface-light dark:bg-surface-dark text-[#181114] dark:text-white pt-16 pb-8 border-t border-[#f4f0f2] dark:border-[#3a2e34]">
+            <div class="layout-container flex justify-center w-full">
+                <div class="flex w-full max-w-[1280px] flex-col px-4 md:px-10">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-xl font-bold text-primary">oveera collections</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                Celebrating the timeless grace of Indian ethnic wear. We bring you the finest sarees
+                                from artisans across the country.
+                            </p>
+                            <div class="flex gap-4 mt-2">
+                                <a class="text-gray-400 hover:text-primary" href="#"><span
+                                        class="material-symbols-outlined">thumb_up</span></a>
+                                <a class="text-gray-400 hover:text-primary" href="#"><span
+                                        class="material-symbols-outlined">photo_camera</span></a>
+                                <a class="text-gray-400 hover:text-primary" href="#"><span
+                                        class="material-symbols-outlined">public</span></a>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="font-bold text-text-main">Shop</h3>
+                            <ul class="space-y-2 text-sm text-text-muted">
+                                <li><a class="hover:text-primary hover:underline" href="#">New Arrivals</a></li>
+                                <li><a class="hover:text-primary hover:underline" href="#">Best Sellers</a></li>
+                                <li><a class="hover:text-primary hover:underline" href="#">Wedding Collection</a></li>
+                                <li><a class="hover:text-primary hover:underline" href="#">Sale</a></li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="font-bold text-text-main">Help</h3>
+                            <ul class="space-y-2 text-sm text-text-muted">
+                                <li><a class="hover:text-primary hover:underline" href="#">Track Order</a></li>
+                                <li><a class="hover:text-primary hover:underline" href="#">Shipping &amp; Returns</a>
+                                </li>
+                                <li><a class="hover:text-primary hover:underline" href="#">Size Guide</a></li>
+                                <li><a class="hover:text-primary hover:underline" href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="font-bold text-text-main">Subscribe</h3>
+                            <p class="text-sm text-text-muted">Get 10% off your first order.</p>
+                            <div class="flex gap-2">
+                                <input
+                                    class="flex-1 rounded-lg border border-[#f4f0f2] dark:border-[#3a2e34] bg-surface-light dark:bg-surface-dark px-3 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                                    placeholder="Your email" type="email" />
+                                <button
+                                    class="bg-primary hover:bg-primary-hover text-white font-medium px-4 py-2 rounded-lg text-sm transition-colors">Join</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="border-t border-[#f4f0f2] dark:border-[#3a2e34] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+                        <p>© 2023 oveera collections. All rights reserved.</p>
+                        <div class="flex gap-6">
+                            <a class="hover:text-primary" href="#">Privacy Policy</a>
+                            <a class="hover:text-primary" href="#">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth sidebar close on navigation
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.getElementById('nav-toggle');
+            const sidebar = document.querySelector('.fixed.top-0.left-0.h-full');
+            const sidebarLinks = sidebar.querySelectorAll('a[href]');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    if (link.getAttribute('href') !== '#') {
+                        navToggle.checked = false;
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && navToggle.checked) {
+                    navToggle.checked = false;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
